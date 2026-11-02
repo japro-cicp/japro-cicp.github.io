@@ -16,11 +16,155 @@
 <meta property="og:url" content="https://japro-cicp.github.io/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="brasao.png">
-<meta http-equiv="refresh" content="0; url=https://gemini.google.com/share/d/16fzwscSgisO-RfpFcdGSaaXdweNAtLHs?usp=sharing">
-<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0f1d4d;color:#fff;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;text-align:center}img{width:120px;border-radius:50%}a{color:#d9b44a}</style>
+<style>
+:root{--navy:#0f1d4d;--navy2:#1c2f75;--gold:#d9b44a;--ink:#1f2433;--mut:#5b6478;--line:#d9deea;--bg:#f4f6fb;--ok:#1e6b3a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+header{background:var(--navy);color:#fff;padding:22px 16px;text-align:center}
+header img{width:76px;height:76px;border-radius:50%;vertical-align:middle}
+header h1{margin:8px 0 2px;font:700 24px/1.2 Georgia,"Times New Roman",serif;letter-spacing:.5px}
+header p{margin:0;color:#c9d2f0;font-size:14px}
+main{max-width:760px;margin:0 auto;padding:20px 16px 40px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;margin:0 0 16px}
+h2{font-size:19px;margin:0 0 8px;color:var(--navy2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 22px;border-radius:10px;border:0;background:var(--navy2);color:#fff;font:700 16px/1.2 inherit;text-decoration:none;cursor:pointer}
+.btn.gold{background:var(--gold);color:#1b1b1b}
+.btn.out{background:#fff;color:var(--navy2);border:2px solid var(--navy2)}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.aviso{background:#fff8e1;border:1px solid #f0d58a;border-radius:10px;padding:14px 16px;margin-top:16px}
+.aviso b{color:#7a5600}
+ol.passos{list-style:none;margin:0;padding:0;counter-reset:p}
+ol.passos>li{position:relative;padding:16px 0 16px 56px;border-top:1px solid var(--line)}
+ol.passos>li:first-child{border-top:0}
+ol.passos>li:before{counter-increment:p;content:counter(p);position:absolute;left:0;top:14px;width:40px;height:40px;border-radius:50%;background:var(--navy2);color:#fff;font-weight:700;display:grid;place-items:center;font-size:18px}
+.passos h3{margin:0 0 4px;font-size:17px}
+.passos p{margin:4px 0}
+.mut{color:var(--mut);font-size:14px}
+kbd{background:#eef1f8;border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:1px 6px;font:600 13px/1.4 ui-monospace,Menlo,Consolas,monospace}
+/* ilustrações simples da tela do Gemini */
+.mock{margin:10px 0 4px;background:#f8f9fc;border:1px dashed #c3c9d9;border-radius:12px;padding:14px;font-size:14px}
+.gbox{background:#fff;border-radius:24px;box-shadow:0 1px 4px rgba(0,0,0,.15);padding:10px 14px;max-width:420px}
+.gbox .ph{color:#7a8194}
+.gline{display:flex;align-items:center;gap:8px;margin-top:8px}
+.plus{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:20px;color:#444;background:#eef1f8}
+.plus.hl{outline:3px solid #e53935;outline-offset:2px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:#e8eefc;color:#1c2f75;border-radius:14px;padding:3px 10px;font-weight:600}
+.chip.hl{outline:3px solid #e53935;outline-offset:2px}
+.menu{background:#fff;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.18);padding:6px 0;width:190px;margin:8px 0 0 4px}
+.menu div{padding:6px 14px;color:#333}
+.menu .hl{background:#fdecea;color:#b42318;font-weight:700}
+.seta{color:#e53935;font-weight:700}
+.cmd{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0 0}
+.ok{color:var(--ok);font-weight:700;display:none}
+details{margin-top:10px}
+summary{cursor:pointer;color:var(--navy2);font-weight:600}
+pre{white-space:pre-wrap;word-break:break-all;background:#0f1d4d;color:#e7ecff;border-radius:10px;padding:12px;font:12.5px/1.5 ui-monospace,Menlo,Consolas,monospace;max-height:260px;overflow:auto}
+.res{display:flex;gap:10px;align-items:stretch;flex-wrap:wrap}
+.res .l{flex:1 1 150px;background:#fff;border-radius:10px;padding:10px;border:1px solid var(--line)}
+.res .r{flex:2 1 220px;background:var(--navy);color:#fff;border-radius:10px;padding:12px;font-family:Georgia,serif}
+.res .r small{display:block;color:var(--gold);font:600 10px/1.4 Arial,sans-serif;letter-spacing:1px}
+ul.prob{margin:6px 0 0;padding-left:20px}
+ul.prob li{margin:6px 0}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:0 16px 30px}
+@media (max-width:520px){header h1{font-size:20px}.btn{width:100%}ol.passos>li{padding-left:50px}}
+</style>
 </head>
 <body>
-<div><img src="brasao.png" alt=""><h1>JAPRO</h1><p>Abrindo o sistema…</p><p>Se não abrir sozinho, <a href="https://gemini.google.com/share/d/16fzwscSgisO-RfpFcdGSaaXdweNAtLHs?usp=sharing">clique aqui</a>.</p></div>
-<script>location.replace("https://gemini.google.com/share/d/16fzwscSgisO-RfpFcdGSaaXdweNAtLHs?usp=sharing")</script>
+<header>
+  <img src="brasao.png" alt="Brasão da Corregedoria-Geral">
+  <h1>JAPRO</h1>
+  <p>Juízo de Admissibilidade Processual · Corregedoria-Geral da PMMT</p>
+</header>
+<main>
+
+<section class="card" aria-labelledby="t1">
+  <h2 id="t1">Acessar o sistema</h2>
+  <p>Para acessar o JAPRO, clique no botão abaixo e entre com o seu <b>e-mail institucional (@pm.mt.gov.br)</b>.</p>
+  <p><a class="btn" href="https://gemini.google.com/share/d/16fzwscSgisO-RfpFcdGSaaXdweNAtLHs">Abrir o JAPRO</a></p>
+  <div class="aviso">
+    <b>Não conseguiu abrir pelo botão?</b> Se a tela ficar em branco ou preta, ou aparecer a mensagem “Algo deu errado”, recarregue a página uma vez. Se continuar sem abrir, siga o <b>passo a passo abaixo</b>: ele instala o JAPRO no seu próprio Gemini em cerca de um minuto, e você só precisa fazer isso uma vez.
+  </div>
+</section>
+
+<section class="card" aria-labelledby="t2">
+  <h2 id="t2">Passo a passo: instalar o JAPRO no seu Gemini</h2>
+  <p class="mut">Funciona no computador e no celular. Faça os passos na ordem.</p>
+  <ol class="passos">
+    <li>
+      <h3>Abra o Gemini com o seu e-mail institucional</h3>
+      <p>Clique no botão abaixo. Ele abre o Gemini numa nova aba.</p>
+      <p><a class="btn out" href="https://gemini.google.com/app" target="_blank" rel="noopener">Abrir o Gemini</a></p>
+      <p class="mut">Confira, no canto inferior esquerdo da tela (no celular, no ícone redondo do canto superior), se a conta conectada é a sua <b>@pm.mt.gov.br</b>. Se for outra, clique no ícone e troque de conta.</p>
+    </li>
+    <li>
+      <h3>Ligue a ferramenta Canvas</h3>
+      <p>Na caixa onde se escreve para o Gemini, clique no <b>sinal de “+”</b> e, no menu que abrir, clique em <b>Canvas</b>.</p>
+      <div class="mock" aria-hidden="true">
+        <div class="gbox"><span class="ph">Peça ao Gemini</span>
+          <div class="gline"><span class="plus hl">+</span><span class="seta">← clique aqui</span></div></div>
+        <div class="menu"><div>Enviar arquivos</div><div>Adicionar do Drive</div><div>Criar imagem</div><div class="hl">▣ Canvas &nbsp;← depois aqui</div><div>Deep Research</div></div>
+      </div>
+      <p>Pronto quando a palavra <b>Canvas</b> aparecer logo abaixo da caixa de texto:</p>
+      <div class="mock" aria-hidden="true"><div class="gbox"><span class="ph">Vamos escrever ou criar algo</span><div class="gline"><span class="plus">+</span><span class="chip hl">▣ Canvas</span></div></div></div>
+    </li>
+    <li>
+      <h3>Copie o comando do JAPRO</h3>
+      <p>Volte para esta página e clique no botão abaixo. O comando é copiado automaticamente.</p>
+      <div class="cmd"><button class="btn gold" id="copiar" type="button">Copiar comando</button><span class="ok" id="okmsg" role="status">✓ Comando copiado! Agora vá para o passo 4.</span></div>
+      <details><summary>Prefere copiar manualmente? Clique aqui para ver o comando</summary>
+<pre id="cmdtxt">Crie um Canvas com o código HTML abaixo exatamente como está, sem reescrever, resumir, reformatar ou acrescentar nada. Ele carrega o sistema JAPRO (Juízo de Admissibilidade Processual, de uso interno da Corregedoria-Geral da PMMT). Não altere a URL do script.
+
+&lt;!doctype html&gt;
+&lt;html lang="pt-BR"&gt;&lt;head&gt;&lt;meta charset="utf-8"&gt;&lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;&lt;title&gt;JAPRO Corregedoria-Geral&lt;/title&gt;&lt;/head&gt;
+&lt;body style="margin:0;font-family:sans-serif"&gt;
+&lt;p id="carregando" style="padding:24px"&gt;Carregando o JAPRO…&lt;/p&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/dwinc-cor/jp-pkg@main/japro-app.js"&gt;&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;</pre>
+        <p class="mut">Selecione todo o texto do quadro acima, do início ao fim, e copie.</p>
+      </details>
+    </li>
+    <li>
+      <h3>Cole o comando no Gemini e envie</h3>
+      <p>Volte para a aba do Gemini, clique dentro da caixa de texto e cole o comando:</p>
+      <ul class="prob">
+        <li><b>No Windows:</b> aperte <kbd>Ctrl</kbd> + <kbd>V</kbd>.</li>
+        <li><b>No Mac:</b> aperte <kbd>⌘ Cmd</kbd> + <kbd>V</kbd>.</li>
+        <li><b>No celular:</b> toque e segure dentro da caixa e escolha <b>Colar</b>.</li>
+      </ul>
+      <p>Depois, envie: aperte <kbd>Enter</kbd> ou clique na <b>seta de enviar</b>, à direita da caixa.</p>
+    </li>
+    <li>
+      <h3>Aguarde o JAPRO abrir</h3>
+      <p>Em cerca de 20 segundos, o sistema aparece na tela, à direita da conversa, com o brasão da Corregedoria-Geral. A partir daí, é só usar normalmente.</p>
+      <div class="mock res" aria-hidden="true"><div class="l"><b>Você:</b> Crie um Canvas com o código…<br><span class="mut">Gemini: …</span></div><div class="r"><small>POLÍCIA MILITAR DO ESTADO DE MATO GROSSO · CORREGEDORIA-GERAL</small>JAPRO · Juízo de Admissibilidade Processual</div></div>
+      <p class="mut">No celular: se o sistema não abrir sozinho, toque no quadro <b>“JAPRO Corregedoria-Geral”</b> que aparece na resposta do Gemini.</p>
+    </li>
+    <li>
+      <h3>Nas próximas vezes, abra pela conversa salva</h3>
+      <p>Não é preciso repetir a instalação. O JAPRO fica guardado numa conversa da lista do lado esquerdo do Gemini (no celular, no menu ☰), com um nome parecido com <b>“Criação do Código HTML JAPRO”</b>. É só clicar nela.</p>
+      <p class="mut">Dica: para achar mais rápido, passe o mouse sobre a conversa, clique nos três pontinhos e escolha <b>Fixar</b> ou <b>Renomear</b> (por exemplo, “JAPRO”). As atualizações do sistema chegam sozinhas: você não precisa instalar de novo.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="card" aria-labelledby="t3">
+  <h2 id="t3">Se algo não sair como o esperado</h2>
+  <ul class="prob">
+    <li><b>O Gemini respondeu só com texto e o sistema não apareceu:</b> o Canvas não estava ligado. Volte ao passo 2, ligue o Canvas e envie o comando de novo.</li>
+    <li><b>Apareceu “Carregando o JAPRO…” e ficou parado:</b> recarregue a página do Gemini (tecla <kbd>F5</kbd>, ou puxe a tela para baixo no celular).</li>
+    <li><b>O sistema abriu, mas com aparência estranha ou incompleta:</b> o Gemini alterou o comando. Abra uma conversa nova e repita os passos 2 a 5, colando o comando sem mudar nada.</li>
+    <li><b>Ainda com dúvida?</b> O Plantão da Corregedoria-Geral atende pelo WhatsApp <a href="https://wa.me/5565981700385" target="_blank" rel="noopener">(65) 98170-0385</a>.</li>
+  </ul>
+  <p class="mut">O comando apenas carrega o sistema oficial da Corregedoria-Geral. Ele não envia dados seus nem dos processos para nenhum lugar.</p>
+</section>
+
+</main>
+<footer>JAPRO · ferramenta de apoio à decisão da Autoridade de Polícia Judiciária Militar · Corregedoria-Geral da PMMT</footer>
+<script>
+(function(){var b=document.getElementById("copiar"),ok=document.getElementById("okmsg"),pre=document.getElementById("cmdtxt");
+function feito(){ok.style.display="inline";b.textContent="Copiado ✓";setTimeout(function(){b.textContent="Copiar comando"},4000)}
+function reserva(){try{var r=document.createRange();pre.parentNode.open=true;r.selectNodeContents(pre);var s=getSelection();s.removeAllRanges();s.addRange(r);if(document.execCommand("copy")){feito();return}}catch(e){}ok.textContent="Não foi possível copiar sozinho: abra “copiar manualmente” e copie o texto.";ok.style.display="inline"}
+b.addEventListener("click",function(){var t=pre.textContent;if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(feito,reserva)}else reserva()})})();
+</script>
 </body>
 </html>
