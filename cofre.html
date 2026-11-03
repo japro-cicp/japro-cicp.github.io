@@ -1,0 +1,14 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>JAPRO</title></head><body><script>
+/* Cofre do JAPRO: guarda neste endereço fixo a chave do emissor e a situação do registro,
+   porque o Gemini abre o sistema a cada recarga num endereço novo (e o navegador apagaria tudo). */
+"use strict";
+const DB="japro-cofre";let dbP=null;
+function abre(){if(dbP)return dbP;dbP=new Promise((res,rej)=>{const q=indexedDB.open(DB,1);q.onupgradeneeded=()=>{try{q.result.createObjectStore("k")}catch(e){}};q.onsuccess=()=>res(q.result);q.onerror=()=>{dbP=null;rej(q.error)}});return dbP}
+async function op(m){const db=await abre();return new Promise((res,rej)=>{const tx=db.transaction("k",m.op==="get"?"readonly":"readwrite"),st=tx.objectStore("k");let v;
+  const r=m.op==="get"?st.get(m.k):m.op==="add"?st.add(m.v,m.k):m.op==="put"?st.put(m.v,m.k):m.op==="del"?st.delete(m.k):m.op==="clear"?st.clear():null;
+  if(!r){rej(new Error("operação desconhecida"));return}r.onsuccess=()=>{v=r.result};tx.oncomplete=()=>res(m.op==="get"?v:true);tx.onerror=tx.onabort=e=>{try{e.preventDefault()}catch(x){}rej(tx.error||new Error("recusado"))}})}
+addEventListener("message",async e=>{const m=e.data;if(!m||m.japroCofre!==1||!e.source)return;
+  let out;try{out={japroCofre:1,id:m.id,ok:true,v:await op(m)}}catch(x){out={japroCofre:1,id:m.id,ok:false,erro:String(x&&x.message||x).slice(0,160)}}
+  try{e.source.postMessage(out,e.origin==="null"?"*":e.origin)}catch(x){}});
+try{parent.postMessage({japroCofre:1,pronto:true},"*")}catch(e){}
+</script></body></html>
