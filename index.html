@@ -17,100 +17,124 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="brasao.png">
 <style>
-:root{--navy:#0f1d4d;--navy2:#1c2f75;--gold:#d9b44a;--ink:#1f2433;--mut:#5b6478;--line:#d9deea;--bg:#f4f6fb;--ok:#1e6b3a}
+:root{--navy:#0e1838;--navy2:#14214f;--navy3:#1c2f75;--gold:#d9b44a;--gold2:#e6c25a;--ink:#1d2433;--mut:#5b6478;--line:#e1e5f0;--bg:#f3f5fa;--card:#fff;--soft:#f8f9fc;--wa:#1faa59}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,"Segoe UI",Roboto,Arial,sans-serif}
-header{background:var(--navy);color:#fff;padding:22px 16px;text-align:center}
-header img{width:76px;height:76px;border-radius:50%;vertical-align:middle}
-header h1{margin:8px 0 2px;font:700 24px/1.2 Georgia,"Times New Roman",serif;letter-spacing:.5px}
-header p{margin:0;color:#c9d2f0;font-size:14px}
-main{max-width:760px;margin:0 auto;padding:20px 16px 40px}
-.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;margin:0 0 16px}
-h2{font-size:19px;margin:0 0 8px;color:var(--navy2)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 22px;border-radius:10px;border:0;background:var(--navy2);color:#fff;font:700 16px/1.2 inherit;text-decoration:none;cursor:pointer}
-.btn.gold{background:var(--gold);color:#1b1b1b}
-.btn.out{background:#fff;color:var(--navy2);border:2px solid var(--navy2)}
-.btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-.aviso{background:#fff8e1;border:1px solid #f0d58a;border-radius:10px;padding:14px 16px;margin-top:16px}
-.aviso b{color:#7a5600}
-ol.passos{list-style:none;margin:0;padding:0;counter-reset:p}
-ol.passos>li{position:relative;padding:16px 0 16px 56px;border-top:1px solid var(--line)}
-ol.passos>li:first-child{border-top:0}
-ol.passos>li:before{counter-increment:p;content:counter(p);position:absolute;left:0;top:14px;width:40px;height:40px;border-radius:50%;background:var(--navy2);color:#fff;font-weight:700;display:grid;place-items:center;font-size:18px}
-.passos h3{margin:0 0 4px;font-size:17px}
-.passos p{margin:4px 0}
-.mut{color:var(--mut);font-size:14px}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--navy3)}
+.hero{position:relative;overflow:hidden;background:#070d22 radial-gradient(ellipse 80% 90% at 50% 0%,#1b2b66 0%,rgba(11,20,48,0) 70%);color:#fff;text-align:center;padding:44px 16px 92px;border-bottom:3px solid var(--gold)}
+.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.02) 0 2px,transparent 2px 14px);pointer-events:none}
+.hero>*{position:relative}
+.hero img{width:96px;height:96px;border-radius:50%;box-shadow:0 0 0 2px rgba(217,180,74,.6),0 0 40px rgba(217,180,74,.25)}
+.hero .k{margin-top:14px;font:600 11.5px/1.4 Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.hero h1{margin:6px 0 4px;font:700 44px/1.05 Georgia,"Times New Roman",serif;letter-spacing:.14em;color:var(--gold2)}
+.hero .s{font:15px/1.4 Georgia,serif;letter-spacing:.06em;color:#c3cbe6}
+main{max-width:820px;margin:-64px auto 0;padding:0 16px 40px;position:relative}
+.card{background:var(--card);border-radius:14px;box-shadow:0 10px 30px rgba(14,24,56,.10),0 0 0 1px var(--line);padding:26px;margin:0 0 18px}
+.tag{display:inline-flex;align-items:center;gap:7px;font:700 11px/1 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--navy3);background:#eef1fa;border:1px solid #d5dbef;border-radius:99px;padding:6px 11px}
+.tag svg{width:13px;height:13px}
+h2{font:700 22px/1.25 Georgia,serif;color:var(--navy2);margin:12px 0 8px}
+h3{font:700 17px/1.3 -apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);margin:0 0 4px}
+p{margin:6px 0}
+.mut{color:var(--mut);font-size:14.5px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:12px 24px;border-radius:10px;border:0;background:var(--navy3);color:#fff;font:700 15px/1.2 Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:transform .12s,box-shadow .12s,background .12s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(28,47,117,.25)}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.btn svg{width:20px;height:20px;flex:0 0 auto}
+.btn.big{min-height:56px;padding:14px 30px;font-size:16px}
+.btn.out{background:#fff;color:var(--navy3);box-shadow:inset 0 0 0 2px var(--navy3)}
+.btn.out:hover{background:#eef1fa}
+.btn.gold{background:var(--gold);color:#14214f}
+.btn.gold:hover{background:var(--gold2);box-shadow:0 6px 16px rgba(217,180,74,.35)}
+.aviso{display:flex;gap:12px;background:#fff8e6;border:1px solid #ecd28a;border-radius:10px;padding:14px 16px;margin-top:18px;color:#4d3a0c;font-size:15px}
+.aviso svg{flex:0 0 22px;height:22px;color:#b98a12;margin-top:2px}
+.aviso b{color:#6b4e00}
+ol.passos{list-style:none;margin:16px 0 0;padding:0;counter-reset:p}
+ol.passos>li{position:relative;padding:22px 0 22px 62px;border-top:1px solid var(--line)}
+ol.passos>li:first-child{border-top:0;padding-top:8px}
+ol.passos>li:before{counter-increment:p;content:counter(p);position:absolute;left:0;top:18px;width:42px;height:42px;border-radius:50%;background:var(--navy3);color:#fff;font:700 18px/42px Arial,sans-serif;text-align:center;box-shadow:0 0 0 4px #eef1fa}
+ol.passos>li:first-child:before{top:4px}
+.shot{position:relative;display:inline-block;max-width:100%;margin:12px 0 4px;border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(14,24,56,.12),0 0 0 1px var(--line);background:#fff}
+.shot img{display:block;max-width:100%;height:auto}
+.shot .mk{position:absolute;border:3px solid #e53935;border-radius:12px;box-shadow:0 0 0 4px rgba(229,57,53,.18)}
+.shot .mk.c{border-radius:50%}
+.shot .lb{position:absolute;transform:translateY(-50%);background:#e53935;color:#fff;font:700 12.5px/1 Arial,sans-serif;letter-spacing:.03em;padding:6px 9px;border-radius:6px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.cmd{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:12px 0 0}
+.ok{color:#1e6b3a;font-weight:700;display:none}
+details{margin-top:12px}
+summary{cursor:pointer;color:var(--navy3);font-weight:600}
+pre{white-space:pre-wrap;word-break:break-all;background:var(--navy);color:#e7ecff;border-radius:10px;padding:14px;font:12.5px/1.5 ui-monospace,Menlo,Consolas,monospace;max-height:260px;overflow:auto}
 kbd{background:#eef1f8;border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:1px 6px;font:600 13px/1.4 ui-monospace,Menlo,Consolas,monospace}
-/* ilustrações simples da tela do Gemini */
-.mock{margin:10px 0 4px;background:#f8f9fc;border:1px dashed #c3c9d9;border-radius:12px;padding:14px;font-size:14px}
-.gbox{background:#fff;border-radius:24px;box-shadow:0 1px 4px rgba(0,0,0,.15);padding:10px 14px;max-width:420px}
-.gbox .ph{color:#7a8194}
-.gline{display:flex;align-items:center;gap:8px;margin-top:8px}
-.plus{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:20px;color:#444;background:#eef1f8}
-.plus.hl{outline:3px solid #e53935;outline-offset:2px}
-.chip{display:inline-flex;align-items:center;gap:6px;background:#e8eefc;color:#1c2f75;border-radius:14px;padding:3px 10px;font-weight:600}
-.chip.hl{outline:3px solid #e53935;outline-offset:2px}
-.menu{background:#fff;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.18);padding:6px 0;width:190px;margin:8px 0 0 4px}
-.menu div{padding:6px 14px;color:#333}
-.menu .hl{background:#fdecea;color:#b42318;font-weight:700}
-.seta{color:#e53935;font-weight:700}
-.cmd{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0 0}
-.ok{color:var(--ok);font-weight:700;display:none}
-details{margin-top:10px}
-summary{cursor:pointer;color:var(--navy2);font-weight:600}
-pre{white-space:pre-wrap;word-break:break-all;background:#0f1d4d;color:#e7ecff;border-radius:10px;padding:12px;font:12.5px/1.5 ui-monospace,Menlo,Consolas,monospace;max-height:260px;overflow:auto}
-.res{display:flex;gap:10px;align-items:stretch;flex-wrap:wrap}
-.res .l{flex:1 1 150px;background:#fff;border-radius:10px;padding:10px;border:1px solid var(--line)}
-.res .r{flex:2 1 220px;background:var(--navy);color:#fff;border-radius:10px;padding:12px;font-family:Georgia,serif}
-.res .r small{display:block;color:var(--gold);font:600 10px/1.4 Arial,sans-serif;letter-spacing:1px}
-ul.prob{margin:6px 0 0;padding-left:20px}
-ul.prob li{margin:6px 0}
-footer{text-align:center;color:var(--mut);font-size:13px;padding:0 16px 30px}
-@media (max-width:520px){header h1{font-size:20px}.btn{width:100%}ol.passos>li{padding-left:50px}}
+ul.lista{margin:8px 0 0;padding-left:20px}
+ul.lista li{margin:6px 0}
+.prob{display:grid;gap:12px;margin-top:12px}
+.prob div{background:var(--soft);border:1px solid var(--line);border-left:4px solid var(--navy3);border-radius:10px;padding:12px 14px;font-size:15px}
+.prob b{color:var(--navy2)}
+.ajuda{background:linear-gradient(180deg,#14214f,#0e1838);color:#fff;border-radius:14px;padding:28px 26px;box-shadow:0 10px 30px rgba(14,24,56,.18);border-top:3px solid var(--gold)}
+.ajuda h2{color:#fff;margin-top:12px}
+.ajuda p{color:#c3cbe6}
+.ajuda .tag{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:var(--gold)}
+.acoes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+.acao{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:12px;text-decoration:none;color:#fff;transition:transform .12s,box-shadow .12s}
+.acao:hover{transform:translateY(-2px)}
+.acao:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.acao .ic{flex:0 0 46px;height:46px;border-radius:50%;display:grid;place-items:center}
+.acao .ic svg{width:26px;height:26px}
+.acao b{display:block;font:700 15px/1.3 Arial,sans-serif;letter-spacing:.04em;text-transform:uppercase}
+.acao .d{display:block;font-size:13.5px;line-height:1.4;opacity:.92;margin-top:2px}
+.acao.nb{background:var(--gold);color:#14214f}
+.acao.nb .ic{background:#14214f;color:var(--gold)}
+.acao.nb:hover{box-shadow:0 8px 20px rgba(217,180,74,.35)}
+.acao.wa{background:var(--wa)}
+.acao.wa .ic{background:#fff;color:var(--wa)}
+.acao.wa:hover{box-shadow:0 8px 20px rgba(31,170,89,.35)}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:6px 16px 34px}
+@media (max-width:620px){.hero{padding:34px 16px 84px}.hero h1{font-size:36px}.card,.ajuda{padding:20px 18px}.btn{width:100%}ol.passos>li{padding-left:54px}ol.passos>li:before{width:38px;height:38px;line-height:38px;font-size:16px}.acoes{grid-template-columns:minmax(0,1fr)}.shot .lb{font-size:11px;padding:5px 7px}}
 </style>
 </head>
 <body>
-<header>
-  <img src="brasao.png" alt="Brasão da Corregedoria-Geral">
+<header class="hero">
+  <img src="brasao.png" alt="Brasão da Corregedoria-Geral da PMMT">
+  <div class="k">Polícia Militar do Estado de Mato Grosso · Corregedoria-Geral</div>
   <h1>JAPRO</h1>
-  <p>Juízo de Admissibilidade Processual · Corregedoria-Geral da PMMT</p>
+  <div class="s">Juízo de Admissibilidade Processual</div>
 </header>
 <main>
 
 <section class="card" aria-labelledby="t1">
+  <span class="tag"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5" fill="currentColor"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>Acesso restrito</span>
   <h2 id="t1">Acessar o sistema</h2>
-  <p>Para acessar o JAPRO, clique no botão abaixo e entre com o seu <b>e-mail institucional (@pm.mt.gov.br)</b>.</p>
-  <p><a class="btn" href="https://gemini.google.com/share/d/16fzwscSgisO-RfpFcdGSaaXdweNAtLHs">Abrir o JAPRO</a></p>
-  <div class="aviso">
-    <b>Não conseguiu abrir pelo botão?</b> Se a tela ficar em branco ou preta, ou aparecer a mensagem “Algo deu errado”, recarregue a página uma vez. Se continuar sem abrir, siga o <b>passo a passo abaixo</b>: ele instala o JAPRO no seu próprio Gemini em cerca de um minuto, e você só precisa fazer isso uma vez.
+  <p>Clique no botão abaixo e entre com o seu <b>e-mail institucional (@pm.mt.gov.br)</b>. No primeiro acesso em cada navegador, o sistema pede o registro da sua chave com um código de 6 dígitos enviado a esse e-mail.</p>
+  <p style="margin-top:16px"><a class="btn big" href="https://gemini.google.com/share/d/16fzwscSgisO-RfpFcdGSaaXdweNAtLHs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h7v7"/><path d="M10 14 21 3"/><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></svg>Abrir o JAPRO</a></p>
+  <div class="aviso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 7v6"/><circle cx="12" cy="16.5" r=".6" fill="currentColor"/></svg>
+    <div><b>Não conseguiu abrir pelo botão?</b> Se a tela ficar em branco ou preta, ou aparecer “Algo deu errado”, recarregue a página uma vez. Se continuar sem abrir, siga o <a href="#t2"><b>passo a passo abaixo</b></a>: ele instala o JAPRO no seu próprio Gemini em cerca de um minuto, e só precisa ser feito uma vez.</div>
   </div>
 </section>
 
 <section class="card" aria-labelledby="t2">
+  <span class="tag">Instalação · cerca de 1 minuto</span>
   <h2 id="t2">Passo a passo: instalar o JAPRO no seu Gemini</h2>
-  <p class="mut">Funciona no computador e no celular. Faça os passos na ordem.</p>
+  <p class="mut">Funciona no computador e no celular. Faça os passos na ordem. As imagens são da tela real do Gemini.</p>
   <ol class="passos">
     <li>
       <h3>Abra o Gemini com o seu e-mail institucional</h3>
-      <p>Clique no botão abaixo. Ele abre o Gemini numa nova aba.</p>
-      <p><a class="btn out" href="https://gemini.google.com/app" target="_blank" rel="noopener">Abrir o Gemini</a></p>
-      <p class="mut">Confira, no canto inferior esquerdo da tela (no celular, no ícone redondo do canto superior), se a conta conectada é a sua <b>@pm.mt.gov.br</b>. Se for outra, clique no ícone e troque de conta.</p>
+      <p>O botão abre o Gemini numa nova aba.</p>
+      <p style="margin-top:10px"><a class="btn out" href="https://gemini.google.com/app" target="_blank" rel="noopener">Abrir o Gemini</a></p>
+      <p class="mut" style="margin-top:10px">Confira, no canto inferior esquerdo da tela (no celular, no ícone redondo do canto superior), se a conta conectada é a sua <b>@pm.mt.gov.br</b>. Se for outra, clique no ícone e troque de conta.</p>
     </li>
     <li>
       <h3>Ligue a ferramenta Canvas</h3>
-      <p>Na caixa onde se escreve para o Gemini, clique no <b>sinal de “+”</b> e, no menu que abrir, clique em <b>Canvas</b>.</p>
-      <div class="mock" aria-hidden="true">
-        <div class="gbox"><span class="ph">Peça ao Gemini</span>
-          <div class="gline"><span class="plus hl">+</span><span class="seta">← clique aqui</span></div></div>
-        <div class="menu"><div>Enviar arquivos</div><div>Adicionar do Drive</div><div>Criar imagem</div><div class="hl">▣ Canvas &nbsp;← depois aqui</div><div>Deep Research</div></div>
-      </div>
-      <p>Pronto quando a palavra <b>Canvas</b> aparecer logo abaixo da caixa de texto:</p>
-      <div class="mock" aria-hidden="true"><div class="gbox"><span class="ph">Vamos escrever ou criar algo</span><div class="gline"><span class="plus">+</span><span class="chip hl">▣ Canvas</span></div></div></div>
+      <p>Na caixa onde se escreve para o Gemini, clique no sinal de <b>“+”</b>:</p>
+      <div class="shot"><img src="passo-mais.jpg" alt="Caixa de texto do Gemini com o sinal de mais à esquerda" width="640" height="184"><span class="mk c" style="left:10.5%;top:25%;width:13%;height:45%"></span><span class="lb" style="left:27%;top:48%">Clique aqui</span></div>
+      <p>No menu que abrir, clique em <b>Canvas</b>:</p>
+      <div class="shot"><img src="passo-menu.jpg" alt="Menu do Gemini com a opção Canvas" width="1100" height="628"><span class="mk" style="left:4.6%;top:66.5%;width:27%;height:9.5%"></span><span class="lb" style="left:33%;top:71.3%">Depois aqui</span></div>
+      <p>Está pronto quando a palavra <b>Canvas</b> aparecer logo abaixo da caixa de texto:</p>
+      <div class="shot"><img src="passo-canvas.jpg" alt="Caixa de texto do Gemini com o Canvas ligado" width="558" height="108"><span class="mk" style="left:10.5%;top:48%;width:16%;height:36%"></span><span class="lb" style="left:29%;top:66%">Canvas ligado</span></div>
     </li>
     <li>
       <h3>Copie o comando do JAPRO</h3>
       <p>Volte para esta página e clique no botão abaixo. O comando é copiado automaticamente.</p>
-      <div class="cmd"><button class="btn gold" id="copiar" type="button">Copiar comando</button><span class="ok" id="okmsg" role="status">✓ Comando copiado! Agora vá para o passo 4.</span></div>
+      <div class="cmd"><button class="btn gold" id="copiar" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar comando</button><span class="ok" id="okmsg" role="status">✓ Comando copiado! Agora vá para o passo 4.</span></div>
       <details><summary>Prefere copiar manualmente? Clique aqui para ver o comando</summary>
 <pre id="cmdtxt">Crie um Canvas com o código HTML abaixo exatamente como está, sem reescrever, resumir, reformatar ou acrescentar nada. Ele carrega o sistema JAPRO (Juízo de Admissibilidade Processual, de uso interno da Corregedoria-Geral da PMMT). Não altere a URL do script.
 
@@ -120,49 +144,65 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:0 16px 30px}
 &lt;p id="carregando" style="padding:24px"&gt;Carregando o JAPRO…&lt;/p&gt;
 &lt;script src="https://cdn.jsdelivr.net/gh/dwinc-cor/jp-pkg@main/japro-app.js"&gt;&lt;/script&gt;
 &lt;/body&gt;&lt;/html&gt;</pre>
-        <p class="mut">Selecione todo o texto do quadro acima, do início ao fim, e copie.</p>
+        <p class="mut">Selecione todo o texto do quadro acima, do início ao fim, e copie. Use sempre o comando desta página oficial.</p>
       </details>
     </li>
     <li>
       <h3>Cole o comando no Gemini e envie</h3>
       <p>Volte para a aba do Gemini, clique dentro da caixa de texto e cole o comando:</p>
-      <ul class="prob">
-        <li><b>No Windows:</b> aperte <kbd>Ctrl</kbd> + <kbd>V</kbd>.</li>
-        <li><b>No Mac:</b> aperte <kbd>⌘ Cmd</kbd> + <kbd>V</kbd>.</li>
-        <li><b>No celular:</b> toque e segure dentro da caixa e escolha <b>Colar</b>.</li>
+      <ul class="lista">
+        <li><b>No Windows:</b> <kbd>Ctrl</kbd> + <kbd>V</kbd></li>
+        <li><b>No Mac:</b> <kbd>⌘ Cmd</kbd> + <kbd>V</kbd></li>
+        <li><b>No celular:</b> toque e segure dentro da caixa e escolha <b>Colar</b></li>
       </ul>
-      <p>Depois, envie: aperte <kbd>Enter</kbd> ou clique na <b>seta de enviar</b>, à direita da caixa.</p>
+      <p style="margin-top:8px">Depois, envie: aperte <kbd>Enter</kbd> ou clique na <b>seta de enviar</b>, à direita da caixa.</p>
     </li>
     <li>
       <h3>Aguarde o JAPRO abrir</h3>
-      <p>Em cerca de 20 segundos, o sistema aparece na tela, logo abaixo do seu comando ou à direita dele (depende do tamanho da tela), com o brasão da Corregedoria-Geral. Para usar com mais conforto, clique no ícone de <b>tela cheia</b> (⤢), no canto superior direito do quadro do JAPRO.</p>
-      <div class="mock res" aria-hidden="true"><div class="l"><b>Você:</b> Crie um Canvas com o código…<br><span class="mut">Gemini: …</span></div><div class="r"><small>POLÍCIA MILITAR DO ESTADO DE MATO GROSSO · CORREGEDORIA-GERAL</small>JAPRO · Juízo de Admissibilidade Processual</div></div>
+      <p>Em cerca de 20 segundos, o sistema aparece logo abaixo do seu comando (ou à direita dele, em telas largas), com o brasão da Corregedoria-Geral. Para usar com mais conforto, clique no ícone de <b>tela cheia</b> (⤢), no canto superior direito do quadro.</p>
+      <div class="shot"><img src="passo-resultado.jpg" alt="O JAPRO aberto no Canvas do Gemini, com a tela de entrada" width="507" height="381"><span class="mk c" style="left:86.6%;top:38.2%;width:7.4%;height:9.6%"></span><span class="lb" style="left:62%;top:30%">Tela cheia</span></div>
       <p class="mut">No celular: se o sistema não abrir sozinho, toque no quadro <b>“JAPRO Corregedoria-Geral”</b> que aparece na resposta do Gemini.</p>
     </li>
     <li>
       <h3>Nas próximas vezes, abra pela conversa salva</h3>
-      <p>Não é preciso repetir a instalação. O JAPRO fica guardado numa conversa do seu Gemini, com um nome que contém a palavra <b>“JAPRO”</b> (por exemplo, “Criação de Canvas HTML do JAPRO”). Para encontrá-la, abra a lista de conversas: no computador, ela fica do lado esquerdo (se aparecerem só ícones, clique no ícone ☰ do canto superior esquerdo); no celular, toque no menu ☰. Depois, é só clicar na conversa.</p>
-      <p class="mut">Dica: para achar mais rápido, passe o mouse sobre a conversa, clique nos três pontinhos e escolha <b>Fixar</b> ou <b>Renomear</b> (por exemplo, “JAPRO”). As atualizações do sistema chegam sozinhas: você não precisa instalar de novo.</p>
+      <p>Não é preciso repetir a instalação. O JAPRO fica guardado numa conversa do seu Gemini com um nome que contém a palavra <b>“JAPRO”</b>. Abra a lista de conversas (no computador, à esquerda; se aparecerem só ícones, clique no ícone ☰ do canto superior esquerdo; no celular, toque no menu ☰) e clique na conversa.</p>
+      <p class="mut">Dica: passe o mouse sobre a conversa, clique nos três pontinhos e escolha <b>Fixar</b> ou <b>Renomear</b> (por exemplo, “JAPRO”). As atualizações do sistema chegam sozinhas.</p>
     </li>
   </ol>
 </section>
 
 <section class="card" aria-labelledby="t3">
+  <span class="tag">Solução de problemas</span>
   <h2 id="t3">Se algo não sair como o esperado</h2>
-  <ul class="prob">
-    <li><b>O Gemini respondeu só com texto e o sistema não apareceu:</b> o Canvas não estava ligado. Volte ao passo 2, ligue o Canvas e envie o comando de novo.</li>
-    <li><b>Apareceu “Carregando o JAPRO…” e ficou parado:</b> recarregue a página do Gemini (tecla <kbd>F5</kbd>, ou puxe a tela para baixo no celular).</li>
-    <li><b>O sistema abriu, mas com aparência estranha ou incompleta:</b> o Gemini alterou o comando. Abra uma conversa nova e repita os passos 2 a 5, colando o comando sem mudar nada.</li>
-    <li><b>Ainda com dúvida?</b> O Plantão da Corregedoria-Geral atende pelo WhatsApp <a href="https://wa.me/5565981700385" target="_blank" rel="noopener">(65) 98170-0385</a>.</li>
-  </ul>
-  <p class="mut">O comando apenas carrega o sistema oficial da Corregedoria-Geral. Ele não envia dados seus nem dos processos para nenhum lugar.</p>
+  <div class="prob">
+    <div><b>O Gemini respondeu só com texto e o sistema não apareceu.</b> O Canvas não estava ligado. Volte ao passo 2, ligue o Canvas e envie o comando de novo.</div>
+    <div><b>Apareceu “Carregando o JAPRO…” e ficou parado.</b> Recarregue a página do Gemini (tecla <kbd>F5</kbd>, ou puxe a tela para baixo no celular).</div>
+    <div><b>O sistema abriu com aparência estranha ou incompleta.</b> O Gemini alterou o comando. Abra uma conversa nova e repita os passos 2 a 5, colando o comando sem mudar nada.</div>
+  </div>
+  <p class="mut" style="margin-top:14px">O comando apenas carrega o sistema oficial da Corregedoria-Geral.</p>
+</section>
+
+<section class="ajuda" aria-labelledby="t4">
+  <span class="tag">Precisa de ajuda?</span>
+  <h2 id="t4">Tire suas dúvidas</h2>
+  <p>O Assistente de dúvidas responde 24 horas, a partir do manual oficial do JAPRO. Se a dúvida continuar, fale com o Plantão da Corregedoria-Geral.</p>
+  <div class="acoes">
+    <a class="acao nb" href="https://notebook.google.com/notebook/1b096059-d82c-4543-91c9-320c52bba42f" target="_blank" rel="noopener noreferrer">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-8l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.4 2.3c-.6.3-.9.8-.9 1.4v.3"/><circle cx="12" cy="15.6" r=".5" fill="currentColor"/></svg></span>
+      <span><b>Assistente de dúvidas</b><span class="d">Gemini Notebook com o manual completo · abre em nova aba</span></span>
+    </a>
+    <a class="acao wa" href="https://wa.me/5565981700385?text=Ol%C3%A1%2C%20preciso%20de%20orienta%C3%A7%C3%A3o%20sobre%20o%20sistema%20JAPRO." target="_blank" rel="noopener noreferrer">
+      <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></span>
+      <span><b>Plantão da Corregedoria</b><span class="d">WhatsApp (65) 98170-0385</span></span>
+    </a>
+  </div>
 </section>
 
 </main>
 <footer>JAPRO · ferramenta de apoio à decisão da Autoridade de Polícia Judiciária Militar · Corregedoria-Geral da PMMT</footer>
 <script>
-(function(){var b=document.getElementById("copiar"),ok=document.getElementById("okmsg"),pre=document.getElementById("cmdtxt");
-function feito(){ok.style.display="inline";b.textContent="Copiado ✓";setTimeout(function(){b.textContent="Copiar comando"},4000)}
+(function(){var b=document.getElementById("copiar"),ok=document.getElementById("okmsg"),pre=document.getElementById("cmdtxt"),rot=b.innerHTML;
+function feito(){ok.style.display="inline";b.textContent="Copiado ✓";setTimeout(function(){b.innerHTML=rot},4000)}
 function reserva(){try{var r=document.createRange();pre.parentNode.open=true;r.selectNodeContents(pre);var s=getSelection();s.removeAllRanges();s.addRange(r);if(document.execCommand("copy")){feito();return}}catch(e){}ok.textContent="Não foi possível copiar sozinho: abra “copiar manualmente” e copie o texto.";ok.style.display="inline"}
 b.addEventListener("click",function(){var t=pre.textContent;if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(feito,reserva)}else reserva()})})();
 </script>
