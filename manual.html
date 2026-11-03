@@ -1,0 +1,994 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Manual do Usuário do JAPRO</title>
+<style>body{max-width:860px;margin:0 auto;padding:24px 16px 60px;font:16px/1.6 Georgia,serif;color:#1d2433;background:#fff}h1,h2,h3,h4{color:#14214f;line-height:1.25}h1{border-bottom:3px solid #d9b44a;padding-bottom:8px}h2{margin-top:2em;border-bottom:1px solid #e3e7f1;padding-bottom:4px}table{border-collapse:collapse}td,th{border:1px solid #d5dbef;padding:6px 8px}code{background:#eef1fa;padding:1px 4px;border-radius:4px}</style></head><body>
+<h1>Manual Completo do Usuário do JAPRO</h1>
+<p><strong>JAPRO – Juízo de Admissibilidade Processual</strong>
+Ferramenta de apoio da Corregedoria-Geral da Polícia Militar do Estado de Mato Grosso (PMMT), elaborada pela Coordenadoria de Instauração e Controle Processual (CICP).</p>
+<p>Este manual explica, passo a passo e em linguagem simples, como acessar, usar e resolver problemas do JAPRO. Ele foi escrito para quem nunca usou a ferramenta. Cada sigla aparece por extenso na primeira vez em que é usada, e o Glossário (capítulo 13) explica os termos jurídicos e técnicos.</p>
+<p>Se você tiver pressa, vá direto ao capítulo que interessa:</p>
+<ul>
+<li>Nunca usou? Leia os capítulos 1, 2, 3 e 5.</li>
+<li>Já tem o resultado na tela? Leia o capítulo 6.</li>
+<li>Algo deu errado? Vá ao capítulo 11 (Solução de problemas) e ao capítulo 12 (Perguntas frequentes).</li>
+</ul>
+<hr />
+<h2>1. O que é o JAPRO e para que serve</h2>
+<h3>1.1. Em uma frase</h3>
+<p>O JAPRO é uma ferramenta que lê o processo (a denúncia ou a notícia de fato que envolve policial militar), aplica a Matriz de Admissibilidade, sugere a medida cabível e prepara, para a sua conferência, um relatório e a minuta do despacho, com cada informação ligada à página dos autos de onde ela saiu.</p>
+<h3>1.2. O que é juízo de admissibilidade</h3>
+<p>Quando chega à autoridade uma denúncia, uma reclamação, um ofício do Ministério Público ou do Poder Judiciário, um boletim de ocorrência ou qualquer outra notícia de fato envolvendo policial militar, alguém precisa decidir <strong>o que fazer com esse expediente</strong>. Essa decisão inicial é o juízo de admissibilidade. O JAPRO ajuda a fazer essa análise preliminar de forma padronizada.</p>
+<h3>1.3. Quem pode usar</h3>
+<p>O JAPRO pode ser usado por qualquer autoridade de polícia judiciária militar da PMMT e por quem a assessora na análise dos expedientes. O acesso exige o e-mail institucional (terminado em @pm.mt.gov.br).</p>
+<h3>1.4. O que o JAPRO faz</h3>
+<ol>
+<li><strong>Lê o processo inteiro</strong>, página por página, em PDF, Word (.docx), texto (.txt) ou imagem (JPG, PNG), inclusive documentos digitalizados e processos com mais de mil páginas.</li>
+<li><strong>Anota cada fato com a página de origem</strong> e confere, por computador, se cada trecho citado está mesmo escrito na página indicada.</li>
+<li><strong>Aplica a Matriz de Admissibilidade</strong> (o roteiro de análise adotado pela Corregedoria-Geral) e sugere um dos resultados possíveis:
+   - <strong>Instauração de procedimento</strong>: Inquérito Policial Militar (IPM), Sindicância Investigativa, Inquérito Sanitário de Origem (ISO), Termo Acusatório, Sindicância Acusatória, Sindicância Demissória, Conselho de Disciplina ou Conselho de Justificação;
+   - <strong>Diligências complementares</strong>: quando faltam esclarecimentos antes de decidir;
+   - <strong>Arquivamento</strong>: quando falta justa causa;
+   - <strong>Declínio de competência</strong>: quando a matéria cabe a outra autoridade ou órgão;
+   - <strong>Apensamento</strong>: quando já existe procedimento instaurado sobre o mesmo fato.</li>
+<li><strong>Gera dois documentos</strong>, em PDF e em Word:
+   - o <strong>Relatório Sintético de Admissibilidade</strong> (o relatório de apoio ao analista), que explica a análise e lista tudo o que você precisa conferir;
+   - a <strong>minuta do Despacho Fundamentado</strong>, pronta para revisão e assinatura da autoridade.</li>
+<li><strong>Aponta o que merece atenção</strong> antes da assinatura, em três listas: «Resolva antes de assinar», «Confira» e «Ajustes automáticos já feitos».</li>
+<li><strong>Protege a análise e os documentos</strong>: avisa quando o arquivo recebido traz trechos preparados para influenciar a leitura automática, assina digitalmente os documentos gerados e permite conferir depois se um relatório ou despacho foi alterado.</li>
+</ol>
+<h3>1.5. Para que o JAPRO NÃO serve</h3>
+<ul>
+<li><strong>Não substitui a leitura dos autos nem o juízo da autoridade.</strong> O JAPRO é ferramenta de apoio. Ele usa inteligência artificial e, por isso, <strong>pode errar</strong>: pode deixar de localizar uma informação, atribuir um fato à página errada, interpretar mal um documento ou escolher um fundamento inadequado.</li>
+<li><strong>Não decide nada.</strong> A decisão e a assinatura são sempre ato pessoal da autoridade competente.</li>
+<li><strong>Não consulta outros sistemas.</strong> O JAPRO não pesquisa no SIGADOC, no Processo Judicial Eletrônico (PJe) nem em qualquer outro sistema. Se você souber que já existe procedimento instaurado sobre o mesmo fato, é você quem anexa a portaria (veja o capítulo 7).</li>
+<li><strong>Não guarda cópia dos processos analisados.</strong> O relatório que você baixa funciona como comprovante da análise e deve ser arquivado com os autos.</li>
+<li><strong>Não analisa documentos que não sejam denúncia ou notícia de fato correcional.</strong> Se você anexar, por exemplo, um termo de referência de licitação, uma nota fiscal ou um edital, a triagem inicial pausa a análise e avisa (veja o item 5.6).</li>
+</ul>
+<h3>1.6. A regra de ouro: a conferência é sua</h3>
+<p>Antes de assinar ou encaminhar qualquer documento gerado, você deve:</p>
+<ol>
+<li>ler o despacho na íntegra e confrontar cada referência de página com os autos;</li>
+<li>examinar cada alerta do relatório;</li>
+<li>conferir nomes, postos, graduações, matrículas, lotações, datas, órgãos, números de processo e dispositivos legais;</li>
+<li>ajustar o texto sempre que o caso exigir.</li>
+</ol>
+<p>Os documentos gerados são <strong>minutas</strong>. Só passam a valer como ato administrativo depois da sua revisão e da assinatura da autoridade competente. Havendo divergência entre o documento e os autos, <strong>prevalecem os autos</strong>.</p>
+<h3>1.7. O despacho nunca menciona a ferramenta</h3>
+<p>O despacho é ato pessoal da autoridade e vale pela assinatura de quem o firma. Por isso, o despacho gerado <strong>não traz nenhuma menção ao JAPRO</strong>, a inteligência artificial ou a documento interno da ferramenta, nem código ou marca visível do sistema. Se você encontrar alguma referência desse tipo, retire-a antes de assinar. O Relatório Sintético, ao contrário, é documento de apoio e identifica a ferramenta.</p>
+<hr />
+<h2>2. Como acessar o JAPRO</h2>
+<h3>2.1. Onde fica</h3>
+<p>O endereço oficial é <strong>https://japro-cicp.github.io</strong>. Nessa página há o botão <strong>«Abrir o JAPRO»</strong>, o passo a passo de instalação no seu próprio Gemini e o contato do Plantão da Corregedoria.</p>
+<p>O JAPRO funciona dentro do <strong>Gemini</strong> (o assistente de inteligência artificial do Google), na ferramenta chamada <strong>Canvas</strong>, e roda no seu navegador.</p>
+<h3>2.2. Do que você precisa</h3>
+<ul>
+<li>Um computador, celular ou tablet com internet.</li>
+<li>Um navegador atualizado. O Google Chrome é o recomendado.</li>
+<li>Entrar no Gemini com a sua conta do <strong>e-mail institucional @pm.mt.gov.br</strong>.</li>
+</ul>
+<h3>2.3. Acesso pelo botão (o caminho normal)</h3>
+<ol>
+<li>Abra <strong>https://japro-cicp.github.io</strong>.</li>
+<li>Clique em <strong>«Abrir o JAPRO»</strong>.</li>
+<li>Se o Google pedir, entre com o seu e-mail institucional (@pm.mt.gov.br).</li>
+<li>Aguarde o JAPRO aparecer na tela, com o brasão da Corregedoria-Geral.</li>
+<li>Na primeira vez, o sistema pede o registro da sua chave (veja o capítulo 3).</li>
+</ol>
+<p><strong>Se a tela ficar em branco ou preta, ou aparecer a mensagem «Algo deu errado»</strong>, recarregue a página uma vez. Se continuar sem abrir, use o passo a passo do item 2.4, que instala o JAPRO no seu próprio Gemini.</p>
+<h3>2.4. Passo a passo: instalar o JAPRO no seu próprio Gemini</h3>
+<p>Use este caminho quando o botão «Abrir o JAPRO» não funcionar. Leva cerca de um minuto, funciona no computador e no celular e só precisa ser feito uma vez.</p>
+<p><strong>Passo 1 – Abra o Gemini com o e-mail institucional.</strong>
+Na página https://japro-cicp.github.io, clique em «Abrir o Gemini» (ou acesse https://gemini.google.com/app). Confira, no canto inferior esquerdo da tela (no celular, no ícone redondo do canto superior), se a conta conectada é a sua @pm.mt.gov.br. Se for outra, clique no ícone e troque de conta.</p>
+<p><strong>Passo 2 – Ligue a ferramenta Canvas.</strong>
+Na caixa onde se escreve para o Gemini, clique no sinal de <strong>«+»</strong> e, no menu que abrir, clique em <strong>Canvas</strong>. Está pronto quando a palavra <strong>Canvas</strong> aparecer logo abaixo da caixa de texto.</p>
+<p><strong>Passo 3 – Copie o comando do JAPRO.</strong>
+Volte à página https://japro-cicp.github.io e clique em <strong>«Copiar comando»</strong>. O comando é copiado automaticamente e aparece a confirmação «Comando copiado!». Se preferir, clique em «Prefere copiar manualmente?», selecione todo o texto do quadro, do início ao fim, e copie. Use sempre o comando da página oficial, que é mantido atualizado; não use comandos recebidos de outras fontes.</p>
+<p><strong>Passo 4 – Cole o comando no Gemini e envie.</strong>
+Volte à aba do Gemini, clique dentro da caixa de texto e cole:
+- no Windows: Ctrl + V;
+- no Mac: ⌘ Cmd + V;
+- no celular: toque e segure dentro da caixa e escolha «Colar».</p>
+<p>Depois, aperte Enter ou clique na seta de enviar, à direita da caixa. Não altere nada no comando.</p>
+<p><strong>Passo 5 – Aguarde o JAPRO abrir.</strong>
+Em cerca de 20 segundos o sistema aparece, logo abaixo do seu comando ou à direita dele (depende do tamanho da tela), com o brasão da Corregedoria-Geral. Para usar com mais conforto, clique no ícone de tela cheia (⤢), no canto superior direito do quadro do JAPRO. No celular, se o sistema não abrir sozinho, toque no quadro «JAPRO Corregedoria-Geral» que aparece na resposta do Gemini.</p>
+<h3>2.5. Nas próximas vezes: abra pela conversa salva</h3>
+<p>Não é preciso repetir a instalação. O JAPRO fica guardado numa conversa do seu Gemini, com um nome que contém a palavra «JAPRO» (por exemplo, «Criação de Canvas HTML do JAPRO»).</p>
+<ul>
+<li>No computador, a lista de conversas fica do lado esquerdo. Se aparecerem só ícones, clique no ícone ☰ do canto superior esquerdo.</li>
+<li>No celular, toque no menu ☰.</li>
+<li>Clique na conversa do JAPRO.</li>
+</ul>
+<p><strong>Dica:</strong> passe o mouse sobre a conversa, clique nos três pontinhos e escolha <strong>Fixar</strong> ou <strong>Renomear</strong> (por exemplo, «JAPRO»), para achá-la mais rápido.</p>
+<h3>2.6. Atualizações de versão</h3>
+<p>As atualizações do JAPRO chegam sozinhas. Você não precisa instalar de novo nem copiar outro comando: ao abrir o sistema, ele já carrega a versão mais recente. O número da versão aparece no rodapé da tela («JAPRO · Corregedoria-Geral da PMMT · versão …») e é registrado no Relatório Sintético.</p>
+<p>Cada versão publicada é assinada digitalmente pela Corregedoria-Geral, e o navegador confere essa assinatura antes de abrir o sistema. Se a conferência falhar, aparece a tela <strong>«JAPRO não foi carregado por segurança»</strong> e o sistema não é executado (veja o item 11.1).</p>
+<h3>2.7. Uso no celular e no tablet</h3>
+<p>O JAPRO funciona no computador, no celular e no tablet. Em telas menores, a área de trabalho passa de duas colunas para uma, as janelas mostram os botões empilhados e os avisos flutuantes ficam mais compactos. As dicas «?» dos campos abrem com um toque e fecham com outro toque (ou ao tocar fora).</p>
+<p>Para processos grandes, prefira o computador: a leitura de centenas de páginas é mais confortável numa tela maior, e a conferência dos documentos fica mais fácil.</p>
+<hr />
+<h2>3. Primeiro acesso: o registro da chave pelo e-mail institucional</h2>
+<h3>3.1. O que é a «chave de emissor»</h3>
+<p>Cada navegador em que o JAPRO é usado cria, no primeiro uso, uma <strong>chave de emissor</strong> própria. Ela funciona como uma assinatura eletrônica do JAPRO: vai dentro de cada relatório, despacho e comunicado que você gerar e identifica de onde o documento saiu. A identificação curta da chave tem o formato <strong>XXXX-XXXX-XXXX</strong>.</p>
+<p>Para ligar essa chave a você, é preciso <strong>registrá-la uma única vez em cada navegador</strong>, confirmando o seu e-mail institucional com um código de 6 dígitos. O registro é obrigatório: o sistema é de uso exclusivo dos militares da PMMT, e nenhuma aba aparece antes dele.</p>
+<h3>3.2. Passo a passo do registro</h3>
+<p>Na primeira abertura, aparece a tela <strong>«Registre a chave deste navegador para entrar»</strong>, com o aviso «Acesso restrito».</p>
+<ol>
+<li>Clique em <strong>«Registrar e entrar»</strong>.</li>
+<li>Preencha:
+   - <strong>Nome completo</strong> (nome e sobrenome);
+   - <strong>Posto/graduação</strong> (escolha na lista);
+   - <strong>E-mail institucional</strong>, terminado em @pm.mt.gov.br.</li>
+<li>Clique em <strong>«Enviar código»</strong>.</li>
+<li>Abra o seu e-mail institucional. Chegará um <strong>código de 6 dígitos</strong>, válido por <strong>15 minutos</strong>.</li>
+<li>Digite o código no campo <strong>«Código recebido por e-mail»</strong> e clique em <strong>«Confirmar»</strong>.</li>
+<li>Pronto: aparece a mensagem «O sistema está liberado neste navegador». A partir daí, o JAPRO não pergunta mais nada neste navegador.</li>
+</ol>
+<p><strong>O código não chegou?</strong> Aguarde alguns minutos, confira a caixa de spam e, se for preciso, clique em <strong>«Reenviar código»</strong>.</p>
+<h3>3.3. Quando o sistema pede o registro de novo</h3>
+<p>O registro vale para <strong>um navegador em um computador</strong>. Ele será pedido de novo quando:</p>
+<ul>
+<li>você usar <strong>outro computador</strong>, outro celular ou <strong>outro navegador</strong> (por exemplo, passou do Chrome para o Edge);</li>
+<li>você usar uma <strong>janela anônima</strong> (ou privativa), que não guarda nada depois de fechada;</li>
+<li>os <strong>dados do navegador forem apagados</strong> (limpeza de histórico, cookies ou dados de sites);</li>
+<li>você clicar em <strong>«Encerrar sessão e apagar dados deste navegador»</strong> (veja o capítulo 10). Nesse caso, a chave antiga é apagada, uma chave nova é criada e o registro é pedido antes do próximo uso.</li>
+</ul>
+<p>Isso é normal e não causa prejuízo: os relatórios e despachos já emitidos continuam conferindo como assinados pela chave antiga.</p>
+<h3>3.4. Onde ver a sua chave</h3>
+<p>Na aba <strong>«Outras ferramentas de apoio»</strong>, no quadro <strong>«Chave de emissor deste navegador»</strong>, aparecem a sua chave (no formato XXXX-XXXX-XXXX), o botão <strong>«Copiar»</strong> e a situação do registro (por exemplo, «Registrada: …»).</p>
+<p><strong>Recomendação:</strong> copie a sua chave e informe-a ao seu setor ou à sua chefia. Assim, quando alguém conferir um documento e a ferramenta disser «Assinatura válida da chave XXXX-XXXX-XXXX», será possível confirmar que ele saiu do JAPRO usado por você.</p>
+<p>Se o quadro mostrar «ainda não criada», clique em <strong>«Gerar minha chave»</strong>.</p>
+<h3>3.5. Chave bloqueada</h3>
+<p>Se aparecer a mensagem <strong>«Chave de emissor bloqueada»</strong> ou «O acesso deste navegador ao JAPRO está suspenso pela administração do sistema», os downloads de relatórios, despachos e comunicados ficam suspensos naquele navegador. A análise na tela continua disponível para consulta. Procure o administrador do sistema na Corregedoria-Geral (CICP) para saber o motivo e pedir a liberação.</p>
+<hr />
+<h2>4. Conhecendo a tela</h2>
+<p>No topo da tela ficam o brasão, a identificação «JAPRO · Juízo de Admissibilidade Processual» e as abas. A aba que abre por padrão é <strong>«Análise»</strong>. No rodapé ficam a versão do sistema e o botão <strong>«Encerrar sessão e apagar dados deste navegador»</strong>.</p>
+<h3>4.1. Aba «Apresentação»</h3>
+<p>É o documento institucional do sistema, assinado pela CICP. Explica o fluxo do juízo de admissibilidade, os cinco resultados possíveis, os fundamentos da padronização, a natureza da ferramenta e a responsabilidade do usuário, os mecanismos de segurança e a cadeia de custódia. Pode ser baixada pelos botões <strong>«Baixar em Word»</strong> e <strong>«Baixar em PDF»</strong>. Por ser material institucional, e não minuta gerada a partir de autos, ela é baixada sem a tela de responsabilidade.</p>
+<h3>4.2. Aba «Fluxograma»</h3>
+<p>Mostra, etapa por etapa, o caminho que a denúncia percorre no juízo de admissibilidade: da entrada do arquivo até os resultados possíveis e os documentos gerados.</p>
+<ul>
+<li><strong>Mover:</strong> clique e arraste o mapa (no celular, arraste com um dedo).</li>
+<li><strong>Aproximar ou afastar:</strong> use o botão de rolagem do mouse, o gesto de pinça ou os botões <strong>+</strong> e <strong>−</strong>. O botão <strong>⤢</strong> ajusta o mapa inteiro à tela, e o percentual mostra o zoom atual.</li>
+<li><strong>Detalhes:</strong> etapas marcadas com um pequeno ponto amarelo têm informações detalhadas. Passe o mouse em cima delas para ver.</li>
+<li>Há também o <strong>«Link externo do fluxograma»</strong>, para abri-lo fora do JAPRO.</li>
+</ul>
+<h3>4.3. Aba «Análise»</h3>
+<p>É onde o trabalho acontece. Tem três painéis:</p>
+<ol>
+<li><strong>Recepção do expediente</strong>: onde você carrega os arquivos e informa o encarregado e o destinatário.</li>
+<li><strong>Processamento em tempo real</strong>: onde você acompanha cada etapa, com os contadores «Páginas lidas», «Fatos extraídos», «Conferência» e «Tempo restante», e o «Registro técnico do processamento».</li>
+<li><strong>Resultado do juízo de admissibilidade</strong>: onde aparecem a decisão sugerida, o Relatório Sintético, o Despacho Fundamentado, os avisos e os botões de download.</li>
+</ol>
+<p>O capítulo 5 explica o uso desta aba passo a passo.</p>
+<h3>4.4. Aba «Base normativa»</h3>
+<p>Mostra a <strong>base normativa embarcada</strong>: a única fonte de fundamentos que o sistema pode citar. Cada norma aparece numa tabela com ID (identificador), Tema, Norma, Dispositivo e Conteúdo. Qualquer dispositivo citado fora dessa base é bloqueado automaticamente e marcado para conferência no relatório.</p>
+<p>Na mesma aba ficam:</p>
+<ul>
+<li><strong>Legislação penal (texto oficial do Planalto):</strong> acervo com o texto literal dos artigos. Há um campo de busca (mostra até 50 resultados; se houver mais, refine a busca). Artigo fora do acervo, parágrafo inexistente, transcrição divergente, pena divergente e artigo revogado ou vetado são bloqueados e devolvidos ao analista com o link oficial.</li>
+<li><strong>Lacunas conhecidas da base normativa:</strong> assuntos que o compêndio ainda não cobre. Nesses pontos, o sistema <strong>não inventa fundamento</strong>: registra a lacuna e indica onde conferir o texto oficial.</li>
+</ul>
+<h3>4.5. Aba «Como usar»</h3>
+<p>Reúne os sete vídeos de treinamento, em ordem. Se é a sua primeira vez, assista na sequência de 1 a 7. Cada botão abre o vídeo no Google Drive, em nova aba, sem interromper a análise em andamento. Se o Drive pedir permissão, entre com a sua conta institucional. A lista completa está no capítulo 14.</p>
+<h3>4.6. Aba «Outras ferramentas de apoio»</h3>
+<p>Reúne recursos que complementam o JAPRO. Todos abrem em nova aba e não interferem na análise em andamento.</p>
+<ul>
+<li><strong>Gemini Notebook da Corregedoria:</strong> caderno do NotebookLM (Google) carregado com toda a base normativa da PMMT (leis, decretos, portarias, regulamentos e manuais correcionais). Responde a perguntas em linguagem natural citando o trecho e o documento de origem. É útil para confirmar um dispositivo antes de assinar, localizar a norma aplicável ou comparar redações. <strong>Acesso:</strong> entre obrigatoriamente com o e-mail @pm.mt.gov.br; no primeiro acesso, clique em «Solicitar acesso» e peça permissão como «Leitor»; o administrador do caderno libera.</li>
+<li><strong>Compêndio Normativo:</strong> pasta compartilhada do Google Drive com os arquivos integrais das normas. Permite abrir o texto original de qualquer norma citada no relatório ou no despacho e conferir a redação literal. <strong>Acesso:</strong> com o e-mail @pm.mt.gov.br; se a pasta pedir permissão, clique em «Solicitar acesso».</li>
+<li><strong>Plantão da Corregedoria:</strong> atendimento por WhatsApp, pelo número <strong>(65) 98170-0385</strong>, sem exigência de conta, para dúvidas sobre o uso do JAPRO e sobre procedimentos correcionais. O botão <strong>«Falar com o Plantão»</strong> abre a conversa no aplicativo ou no WhatsApp Web.</li>
+<li><strong>Verificar integridade e assinatura de um relatório ou despacho:</strong> ferramenta que confere se um documento gerado pelo JAPRO foi alterado (veja o capítulo 9). Aqui também fica o quadro <strong>«Chave de emissor deste navegador»</strong>.</li>
+</ul>
+<hr />
+<h2>5. Fazendo uma análise passo a passo</h2>
+<h3>5.1. Visão geral</h3>
+<ol>
+<li>Carregue os arquivos do processo.</li>
+<li>Informe o encarregado e o destinatário (ou marque «ainda não definido»).</li>
+<li>Clique em <strong>«Iniciar análise»</strong>.</li>
+<li>Acompanhe as etapas.</li>
+<li>Leia o resultado, resolva as pendências, preencha os campos do despacho e baixe os documentos.</li>
+</ol>
+<h3>5.2. Passo 1 – Carregar os arquivos</h3>
+<p>No painel <strong>«1 · Recepção do expediente»</strong>, arraste os arquivos para o quadro <strong>«Arraste os arquivos aqui ou clique para selecionar»</strong>, ou clique nele e escolha os arquivos.</p>
+<p><strong>Formatos aceitos:</strong> PDF (inclusive com mais de 1.000 páginas e digitalizado), DOCX (Word), TXT, JPG e PNG.</p>
+<p><strong>Formatos que precisam de ajuste antes:</strong>
+- <strong>Word antigo (.doc):</strong> salve como .docx ou PDF e carregue de novo.
+- <strong>PDF protegido por senha:</strong> remova a senha do PDF e carregue de novo.</p>
+<p><strong>Tamanho:</strong> não há limite de tamanho. A leitura é feita no seu navegador, página por página.</p>
+<p><strong>Vários arquivos:</strong> você pode carregar mais de um arquivo. O sistema mantém a numeração de páginas de cada um, e as referências do relatório e do despacho indicam o arquivo e a página. Carregue o processo <strong>completo</strong>: o que não for carregado não será analisado.</p>
+<p>Depois que cada arquivo é lido, aparecem o número de páginas, a quantidade de caracteres e o tamanho. Avisos possíveis:</p>
+<ul>
+<li><strong>«N página(s) digitalizada(s): serão lidas por leitura óptica»</strong>: o PDF tem páginas que são imagem (documento escaneado). O sistema transcreve essas páginas automaticamente. É normal.</li>
+<li><strong>«arquivo sem paginação: as referências indicarão seções»</strong>: ocorre com Word ou texto, que não têm páginas fixas. O sistema divide o arquivo em seções, e as referências passam a indicar a seção, e não a página.</li>
+<li><strong>«[arquivo] já foi carregado»</strong>: você tentou carregar o mesmo arquivo duas vezes. Nada a fazer.</li>
+</ul>
+<p>Para retirar um arquivo antes de iniciar, use a opção de exclusão ao lado dele e confirme «Retirar [arquivo] da análise?».</p>
+<h3>5.3. Passo 2 – Encarregado e destinatário</h3>
+<p>Antes de iniciar, o sistema exige duas informações, porque elas entram na redação do despacho. Preencha cada uma <strong>ou</strong> marque a caixa correspondente.</p>
+<ul>
+<li><strong>Encarregado/sindicante a designar:</strong> quem vai conduzir o procedimento, com posto e nome (exemplo: «Cap PM João da Silva»). Em IPM com investigado oficial, o encarregado deve ter posto superior ao do investigado.</li>
+<li><strong>Lotação do encarregado</strong> (opcional): a unidade onde ele está lotado (exemplo: «4º BPM»).</li>
+<li>Caixa <strong>«Encarregado ainda não definido»</strong>: marque se ainda não sabe quem será. O despacho dirá que o encarregado será designado em ato próprio.</li>
+<li><strong>Encaminhar a (destinatário):</strong> o setor que recebe os autos após o despacho (exemplo: «Gerência de Atendimento ao Cidadão – GAC/CorregPM»).</li>
+<li>Caixa <strong>«Destinatário a definir»</strong>: marque se ainda não sabe. O despacho ficará sem o item de encaminhamento.</li>
+</ul>
+<p>Quando a etapa estiver completa, aparece o sinal <strong>«✓ pronto»</strong> e o botão <strong>«Iniciar análise»</strong> é habilitado. Enquanto não estiver, aparece a mensagem: «Para habilitar o botão, conclua a etapa 2: informe o encarregado e o destinatário ou marque as caixas “ainda não definido”».</p>
+<p><strong>Dica:</strong> cada campo tem um sinal <strong>«?»</strong> ao lado. Passe o mouse (ou toque, no celular) para ver o que preencher e um exemplo.</p>
+<h3>5.4. Passo 3 – Iniciar a análise</h3>
+<p>Clique em <strong>«Iniciar análise»</strong>. Se for o primeiro uso no navegador e a chave ainda não estiver registrada, o sistema pede o registro antes de começar (capítulo 3).</p>
+<p>Durante o processamento, você pode:</p>
+<ul>
+<li><strong>«Interromper»</strong>: para o processamento. O que já foi feito fica guardado.</li>
+<li><strong>«Retomar da etapa interrompida»</strong>: continua do ponto em que parou, aproveitando a leitura já feita.</li>
+<li><strong>«Nova análise»</strong>: descarta os arquivos carregados e os resultados da análise atual. <strong>Baixe antes</strong> os documentos que quiser guardar.</li>
+</ul>
+<h3>5.5. Passo 4 – Acompanhar as etapas</h3>
+<p>No painel <strong>«2 · Processamento em tempo real»</strong>, cada etapa mostra o que faz e, ao terminar, o seu resultado. As etapas são:</p>
+<ol>
+<li><strong>Leitura das páginas digitalizadas</strong>: transcreve as páginas que são imagem. Só ocorre quando o PDF tem páginas sem texto.</li>
+<li><strong>Triagem do documento</strong>: verifica se o arquivo é mesmo uma denúncia ou notícia de fato sobre conduta de policial militar.</li>
+<li><strong>Leitura completa dos autos</strong>: lê todas as páginas e anota cada fato com a página de onde ele saiu. Nenhuma página é pulada.</li>
+<li><strong>Conferência dos trechos</strong>: confere se cada trecho anotado está mesmo escrito na página indicada.</li>
+<li><strong>Organização dos fatos</strong>: junta os fatos repetidos sem perder a página de origem de cada um.</li>
+<li><strong>Matriz de Admissibilidade</strong>: aplica aos fatos os passos da Matriz (Direito Penal Militar e processo disciplinar) e sugere a decisão.</li>
+<li><strong>Revisão jurídica da análise</strong>: uma segunda leitura, independente da primeira, confere a análise, as provas citadas e a lógica da decisão.</li>
+<li><strong>Conferência das normas e das páginas</strong>: confere se cada lei citada existe na base normativa e se cada afirmação indica a página dos autos. O que não passar é retirado ou anotado no relatório. Nesta etapa aparece também o resultado da segunda verificação independente da decisão.</li>
+<li><strong>Conferência da análise com as páginas</strong>: cada afirmação é comparada com a página citada; o que não estiver lá é corrigido ou retirado.</li>
+<li><strong>Exame dos fatos noticiados</strong>: verifica se algum relato de agressão ou de outra irregularidade atribuída a policial ficou sem análise e, se ficou, examina-o antes da redação do despacho.</li>
+<li><strong>Redação do despacho</strong>: redige o despacho a partir da análise já conferida.</li>
+<li><strong>Revisão do despacho</strong>: revisão jurídica e de redação oficial.</li>
+<li><strong>Conferência final do despacho</strong>: cada frase do despacho é comparada com a página que ela cita.</li>
+<li><strong>Montagem dos documentos</strong>: monta o relatório e o despacho para você ler e baixar.</li>
+<li><strong>Coerência entre relatório e despacho</strong>: confere se os dois dizem o mesmo e corrige o que divergir antes de liberar os downloads.</li>
+</ol>
+<p>Os contadores mostram:</p>
+<ul>
+<li><strong>Páginas lidas</strong>: quantas páginas dos autos já foram lidas;</li>
+<li><strong>Fatos extraídos</strong>: quantos fatos foram anotados, cada um com a página de origem;</li>
+<li><strong>Conferência</strong>: o percentual de trechos encontrados na página citada;</li>
+<li><strong>Tempo restante</strong>: estimativa que se ajusta ao ritmo real do processamento. Ao final, aparece o tempo total da análise.</li>
+</ul>
+<h3>5.6. Quando a triagem pausa a análise</h3>
+<p>Se o arquivo não parecer denúncia ou notícia de fato correcional, aparece o aviso <strong>«Triagem de pertinência»</strong>, com o título «Este arquivo não parece ser denúncia nem notícia de fato correcional» (ou «Não foi possível confirmar que este arquivo é denúncia ou notícia de fato correcional»). O processamento é pausado antes da análise completa, e nada é descartado. O aviso mostra o tipo de documento identificado e o motivo. Você tem duas opções:</p>
+<ul>
+<li><strong>«Anexar outro arquivo»</strong>: use se anexou o arquivo errado. O JAPRO analisa denúncias e notícias de fato sobre conduta de policial militar: ofício do Ministério Público ou do Judiciário, reclamação de cidadão, manifestação de ouvidoria, boletim de ocorrência ou termo de declaração.</li>
+<li><strong>«Prosseguir mesmo assim como denúncia»</strong>: use se o documento relata, sim, conduta de policial militar. A análise roda com toda a metodologia, e o relatório registra que o documento foi sinalizado e que você optou por prosseguir.</li>
+</ul>
+<h3>5.7. Quanto tempo leva</h3>
+<p>Depende do tamanho do processo, da quantidade de páginas digitalizadas e do ritmo do serviço de inteligência artificial no momento. O próprio sistema mostra a estimativa em <strong>«Tempo restante»</strong>, que é recalculada continuamente. Processos pequenos terminam bem mais rápido que processos com centenas de páginas. Não feche a aba nem a conversa do Gemini durante o processamento.</p>
+<h3>5.8. Análise anterior dos mesmos autos</h3>
+<p>Se você carregar de novo os mesmos autos de uma análise anterior feita no mesmo navegador, aparece a janela <strong>«Análise anterior encontrada»</strong>, com a etapa em que ela parou e a data. Clique em <strong>«Retomar»</strong> para continuar do ponto em que parou (se a análise já estava concluída, o relatório e o despacho voltam sem reprocessar) ou em <strong>«Cancelar»</strong> para descartá-la e começar do zero.</p>
+<h3>5.9. O «Registro técnico do processamento»</h3>
+<p>Abaixo dos contadores fica o <strong>«Registro técnico do processamento»</strong>, com a hora e a descrição de cada passo. Você não precisa lê-lo no uso normal. Ele é útil quando algo dá errado: a mensagem ali registrada ajuda a identificar em que etapa ocorreu o problema (veja o vídeo 5, «Como registrar um erro»).</p>
+<hr />
+<h2>6. Entendendo o resultado</h2>
+<p>Ao final, o painel <strong>«3 · Resultado do juízo de admissibilidade»</strong> mostra:</p>
+<ul>
+<li>o <strong>Resultado sugerido</strong> (a decisão);</li>
+<li>as abas <strong>«Relatório sintético»</strong> e <strong>«Despacho fundamentado»</strong>, para leitura na tela;</li>
+<li>o painel de avisos (<strong>«Resolva antes de assinar»</strong>, <strong>«Confira»</strong> e <strong>«Ajustes automáticos já feitos»</strong>);</li>
+<li>os botões de download (<strong>PDF</strong>, para leitura e impressão, e <strong>Word</strong>, editável);</li>
+<li>os <strong>Campos do despacho</strong>.</li>
+</ul>
+<h3>6.1. A decisão sugerida</h3>
+<p>É o resultado que a análise indicou: instauração (com o tipo de procedimento), diligências complementares, arquivamento, declínio de competência ou apensamento.</p>
+<p>A decisão é determinada <strong>duas vezes</strong>, de forma independente. Se as duas coincidirem, a etapa «Conferência das normas e das páginas» informa: «A decisão sugerida foi confirmada por uma segunda verificação independente». Se divergirem, o caso é sinalizado como <strong>«Decisão sensível»</strong> na lista «Resolva antes de assinar», com as duas conclusões, e <strong>você escolhe qual prevalece</strong>. O sistema não escolhe sozinho.</p>
+<p><strong>Atenção:</strong> a decisão sugerida é só uma sugestão. Leia os fundamentos no relatório e confira-os nos autos antes de adotar ou alterar a medida.</p>
+<h3>6.2. O Relatório Sintético de Admissibilidade, seção por seção</h3>
+<p>O relatório é o documento de apoio ao analista. Explica o que o sistema leu, como chegou à decisão e o que você deve conferir. Cada afirmação indica a página dos autos.</p>
+<ol>
+<li><strong>Síntese da decisão sugerida</strong>: o resultado proposto, o procedimento, o fundamento e o motivo, em poucas linhas.</li>
+<li><strong>Envolvidos</strong>: as pessoas que aparecem nos autos (militares, vítimas, testemunhas, noticiantes), com a página onde cada uma aparece.</li>
+<li><strong>Peças que instruem os autos</strong>: a lista dos documentos do processo (boletim de ocorrência, termos de depoimento, laudos, decisões, ofícios etc.), com as páginas.</li>
+<li><strong>Preliminares</strong>: questões que precisam ser vistas antes do mérito, como origem do expediente, competência e prazos.</li>
+<li><strong>Aplicação da Matriz de Admissibilidade</strong>: o resultado de cada passo da Matriz (veja o item 6.3).</li>
+<li><strong>Matriz de confrontamento de versões</strong>: uma tabela que coloca lado a lado a versão dos policiais militares, a da vítima ou do noticiante e a das testemunhas.</li>
+<li><strong>Pontos incontroversos e controvertidos</strong>: o que todas as versões confirmam e o que está em disputa.</li>
+<li><strong>Dados funcionais dos militares</strong>: posto ou graduação, círculo hierárquico (oficial, aspirante ou praça), situação (ativo, inativo, aluno) e estabilidade, quando relevantes para o tipo de procedimento.</li>
+<li><strong>Fundamentos normativos utilizados</strong>: as normas citadas, todas da base normativa embarcada.</li>
+<li><strong>Controle de qualidade do processamento</strong>: os «Alertas ao analista», ou seja, todos os pontos de atenção do painel, além de informações sobre a qualidade da leitura e das conferências.</li>
+<li><strong>Identificação dos arquivos analisados (cadeia de custódia digital)</strong>: a impressão digital de cada arquivo analisado, o número de páginas, o tamanho, a versão do sistema, a data e a hora do processamento, as conferências obrigatórias executadas e os arquivos entregues (veja o capítulo 9).</li>
+</ol>
+<p>Quando o arquivo recebido tiver achados de integridade, o relatório traz também a seção <strong>«Integridade do documento de entrada»</strong> (veja o capítulo 8).</p>
+<p>No rodapé de cada página do relatório aparecem o <strong>código de verificação</strong> e a <strong>chave do emissor</strong>.</p>
+<h3>6.3. Os passos da Matriz de Admissibilidade, em linguagem simples</h3>
+<p>A Matriz é o roteiro que a análise segue. Em resumo:</p>
+<ol>
+<li><strong>Triagem da origem e da natureza do pedido</strong>: de onde veio o expediente (Ministério Público, Poder Judiciário, cidadão, outra unidade, denúncia anônima) e o que ele pede.</li>
+<li><strong>Boletim de ocorrência da PM</strong>: análise da narrativa, em ordem cronológica.</li>
+<li><strong>Recebimento na Polícia Judiciária Civil</strong>: o que a delegacia registrou ao receber o conduzido (auto de prisão em flagrante, recibo de entrega do preso, boletim da Polícia Civil).</li>
+<li><strong>Requisição de exame de corpo de delito</strong>: se a guia existe e se foi feita a tempo.</li>
+<li><strong>Laudo pericial</strong>: a prova técnica da materialidade (se houve lesão).</li>
+<li><strong>Declarações na delegacia</strong>: se o conduzido alegou agressão e se a alegação é genérica ou específica.</li>
+<li><strong>Confrontamento das versões</strong>: comparação das versões dos policiais, da vítima e das testemunhas.</li>
+<li><strong>Decisão fundamentada</strong>: o resultado entre os cinco possíveis.</li>
+</ol>
+<p>Se algum passo não puder ser analisado, aparece o aviso «Passos da Matriz não analisados».</p>
+<h3>6.4. O Despacho Fundamentado</h3>
+<p>É a minuta do ato da autoridade, em quatro partes:</p>
+<ul>
+<li><strong>I – Do relatório</strong>: o resumo do expediente e dos fatos, com as páginas;</li>
+<li><strong>II – Da análise de admissibilidade</strong>: a aplicação dos critérios ao caso;</li>
+<li><strong>III – Da fundamentação</strong>: as normas que embasam a decisão;</li>
+<li><strong>IV – Da decisão</strong>: o dispositivo, ou seja, as ordens (instaurar, designar encarregado, diligenciar, arquivar, remeter, apensar), com responsáveis, prazos e destinatários.</li>
+</ul>
+<p>O fecho segue o resultado (por exemplo, «Registre-se. Cumpra-se.» na instauração, ou «Registre-se. Comunique-se ao noticiante. Arquive-se.» no arquivamento).</p>
+<p>Lembre-se: o despacho <strong>não menciona o JAPRO</strong> (item 1.7).</p>
+<h3>6.5. Os três tipos de aviso</h3>
+<p>O painel de avisos começa com um resumo («Antes de assinar: …») e traz três listas. Os itens vêm fechados: clique numa linha para ver o que aconteceu e o que fazer; clique de novo para fechar. Cada item pode mostrar «O que aconteceu» (ou «O que está errado»), «O que fazer», «Por que importa» e as <strong>páginas</strong> envolvidas.</p>
+<p>Se não houver nenhum aviso, aparece: «Sem pendências de validação. Mesmo assim, confira as páginas citadas antes de assinar».</p>
+<h4>«Resolva antes de assinar» (marcador vermelho)</h4>
+<p>São <strong>pendências que mudam o conteúdo do documento</strong>. Resolva cada uma (ou confirme a decisão) antes de assinar. Exemplos:</p>
+<ul>
+<li><strong>Decisão sensível</strong>: as duas determinações da decisão divergiram; escolha qual prevalece.</li>
+<li><strong>Encarregado incompatível com o investigado</strong>: por exemplo, o encarregado informado não é oficial, ou tem posto inferior ao do investigado oficial (Código de Processo Penal Militar – CPPM, art. 7º, § 2º). Por cautela, ele não é designado no despacho.</li>
+<li><strong>Encarregado do mesmo posto do investigado</strong>: o CPPM, art. 7º, § 3º, só admite oficial do mesmo posto se ele for mais antigo. Confira a antiguidade nos assentamentos; se ele for mais antigo, designe-o manualmente.</li>
+<li><strong>Fatos noticiados com indícios fora do despacho</strong>: algum relato com indícios (por exemplo, de agressão) não entrou no objeto da apuração.</li>
+<li><strong>Ordem sem responsável</strong> ou <strong>Ordem sem prazo de cumprimento</strong>.</li>
+<li><strong>Investigados ausentes do dispositivo</strong>.</li>
+<li><strong>Tipo de procedimento não definido</strong>.</li>
+<li><strong>Decisão sem fundamento normativo</strong>.</li>
+<li><strong>Conferência automática não concluída</strong> (veja o item 6.8).</li>
+</ul>
+<h4>«Confira» (marcador azul)</h4>
+<p>São <strong>pontos que o sistema não conseguiu confirmar sozinho</strong>. Verifique cada um nas páginas indicadas dos autos. Exemplos:</p>
+<ul>
+<li><strong>Posto ou graduação não confirmados nos autos</strong>;</li>
+<li><strong>Lotação não confirmada nos autos</strong>;</li>
+<li><strong>Matrícula encontrada perto do nome, sem confirmação</strong>;</li>
+<li><strong>Prazo sugerido não confirmado</strong>;</li>
+<li><strong>Páginas ilegíveis</strong> ou <strong>Páginas não lidas pela IA</strong>;</li>
+<li><strong>Frase do despacho a conferir</strong> ou <strong>Frase do relatório a conferir</strong>;</li>
+<li><strong>Análise com confiança baixa</strong>;</li>
+<li><strong>Competência: fato fora da Capital</strong>.</li>
+</ul>
+<h4>«Ajustes automáticos já feitos» (marcador cinza)</h4>
+<p>São <strong>correções que o sistema já fez no texto</strong>. Servem só para informação e não exigem ação. Exemplos:</p>
+<ul>
+<li><strong>Grafia corrigida automaticamente</strong>;</li>
+<li><strong>Posto corrigido conforme os autos</strong> e <strong>Matrícula corrigida conforme os autos</strong>;</li>
+<li><strong>Páginas de citação corrigidas</strong>;</li>
+<li><strong>Referências ao sistema retiradas do texto</strong> (para que o despacho não mencione a ferramenta);</li>
+<li><strong>Frase ajustada para linguagem neutra</strong> e <strong>Frase ajustada para não antecipar juízo de mérito</strong>;</li>
+<li><strong>Fundamentos fora da base normativa bloqueados</strong>.</li>
+</ul>
+<p>Todos os avisos também constam da seção 10 do Relatório Sintético («Alertas ao analista»).</p>
+<h3>6.6. Correções sugeridas: como aplicar</h3>
+<p>Muitas pendências de «Resolva antes de assinar» e de «Confira» trazem uma forma de correção. Toda correção é <strong>pontual</strong>: só muda a frase, o item ou o dado envolvido; nada mais é reescrito e nenhum processamento é refeito.</p>
+<p>Há três formas:</p>
+<ol>
+<li><strong>Correção segura (botão «Aplicar correção sugerida»)</strong>: o item mostra o <strong>«Trecho do despacho»</strong> atual e a <strong>«Correção sugerida»</strong>. O botão só aparece depois que o sistema testou a correção no documento inteiro e confirmou que ela resolve a pendência sem criar outra. Enquanto testa, aparece «Conferindo a correção no documento inteiro…».</li>
+<li><strong>Escolha entre opções (quadro «Escolha uma opção»)</strong>: o item traz duas ou três opções concretas, cada uma com a página. Exemplos: para um fato noticiado fora do despacho, «Incluir no objeto da apuração», «Registrar como não confirmado» (o fato fica fora, e o relatório registra que você o examinou) ou «Examinar manualmente» (o item passa para «Confira», para você ler as páginas com calma; o despacho não muda).</li>
+<li><strong>Dado que não está nos autos (campo para preencher)</strong>: quando falta uma informação que só você tem, como o posto e o nome do encarregado («Inserir no despacho») ou a data de incorporação de um militar, no formato DD/MM/AAAA («Registrar no quadro»). O sistema confere o formato antes de aceitar.</li>
+</ol>
+<p>Quando houver várias correções seguras, aparece o botão <strong>«Aplicar todas as correções seguras»</strong>: cada uma é conferida antes, só as que passam são aplicadas, e o documento é conferido de novo no fim.</p>
+<p>Depois de aplicar:</p>
+<ul>
+<li>aparece a mensagem <strong>«Correção aplicada ao despacho. Se já baixou o despacho, baixe-o de novo para levar a versão corrigida»</strong>;</li>
+<li>a correção vai para o histórico (no painel e no relatório, como «Correção sugerida aplicada por você» ou «Decisão registrada por você») e pode ser desfeita com <strong>«Desfazer»</strong>. Se o mesmo trecho tiver sido alterado por correção posterior, desfaça primeiro as mais recentes.</li>
+</ul>
+<p><strong>Baixe de novo depois de corrigir.</strong> O arquivo baixado antes da correção não tem a correção.</p>
+<h3>6.7. Quando a correção não pode ser aplicada automaticamente</h3>
+<p>Algumas pendências não têm botão, porque só você pode julgar. O item explica o motivo. Casos comuns:</p>
+<ul>
+<li><strong>«Esta correção não pode ser aplicada automaticamente: a troca criaria outra pendência no documento.»</strong> Use o texto sugerido como modelo e corrija o trecho diretamente no despacho.</li>
+<li><strong>«Corrija você mesmo este trecho no texto do despacho, usando a correção sugerida acima como modelo e ajustando-a ao restante do documento.»</strong></li>
+<li><strong>«Esta pendência nasceu de outra correção […]; o sistema não oferece correção em cadeia.»</strong> Corrija o trecho no texto.</li>
+</ul>
+<p>Para corrigir você mesmo, baixe o despacho em <strong>Word (editável)</strong> e faça a alteração no editor de texto, conferindo-a com os autos.</p>
+<h3>6.8. «Conferência incompleta»</h3>
+<p>Se alguma conferência obrigatória não puder ser concluída (por erro ou tempo esgotado), o sistema <strong>não entrega o resultado como se estivesse conferido</strong>. Aparecem o aviso <strong>«Conferência incompleta»</strong> e a indicação da conferência que faltou. Essas conferências existem para pegar erros de página, de autoria ou de fundamento. Você tem duas alternativas:</p>
+<ul>
+<li><strong>«Reprocessar a conferência»</strong> (recomendado): o sistema refaz a partir da etapa que falhou, aproveitando a leitura já feita. Ao terminar, baixe o documento de novo;</li>
+<li><strong>baixar assim mesmo</strong>, marcando que está ciente; nesse caso, confira manualmente com atenção redobrada. A limitação fica registrada no relatório.</li>
+</ul>
+<h3>6.9. Dados funcionais dos militares</h3>
+<p>Quando o caso pode levar a processo demissório, o tipo de procedimento depende do círculo hierárquico e da estabilidade de cada militar, dado que raramente consta dos autos. Por isso, o resultado pode mostrar um quadro de <strong>dados funcionais</strong> com perguntas por militar:</p>
+<ul>
+<li><strong>círculo</strong>: não sei, praça, aspirante ou oficial;</li>
+<li><strong>situação</strong>: não sei, ativo, inativo ou aluno;</li>
+<li><strong>estabilidade</strong>: não sei informar, sim (é estável) ou não é estável.</li>
+</ul>
+<p>Regra aplicada pelo sistema: oficial responde a Conselho de Justificação; aspirante, praça estável e praça da reserva ou reformada respondem a Conselho de Disciplina; praça sem estabilidade e aluno de curso de formação respondem a Sindicância Demissória. A estabilidade é de três anos de efetivo serviço.</p>
+<p>Preencha o que souber e clique em <strong>«Aplicar as respostas e reavaliar a decisão»</strong>: o sistema refaz só a decisão e o despacho com o que você informou, sem reler o processo. Se não souber, siga normalmente; os documentos continuam disponíveis e o relatório registra a pendência. Se aparecer «Dados alterados sem reavaliação», é porque você mudou os dados, mas ainda não clicou no botão: a decisão e o despacho continuam os anteriores.</p>
+<h3>6.10. Campos do despacho</h3>
+<p>Antes de baixar o despacho, preencha os <strong>Campos do despacho</strong>. Os campos com <strong>asterisco (*)</strong> são obrigatórios: o sistema não gera o despacho final com eles em branco. Os demais são opcionais.</p>
+<p><strong>Identificação do despacho</strong></p>
+<ul>
+<li><strong>Número do despacho</strong>*: número sequencial do despacho no setor, sem o ano (exemplo: 145).</li>
+<li><strong>Ano</strong>*: quatro dígitos (vem com o ano atual).</li>
+<li><strong>Sigla de numeração</strong>*: o final da numeração do SIGADOC do seu setor, o que vem depois de número/ano (exemplo: CICP/COGPM/PM).</li>
+<li><strong>Setor emissor (cabeçalho)</strong>*: nome do setor por extenso (exemplo: «Seção de Justiça e Disciplina do 4º BPM»).</li>
+<li><strong>Referência (expediente de origem)</strong> (opcional): o sistema tenta identificá-la nos autos; confira. Exemplo: «Processo nº 1014061-49.2026.8.11.0002». Se aparecer a sugestão de incluir o tipo do documento ou o número, ela não impede a geração do despacho.</li>
+<li><strong>Nº SIGADOC / protocolo</strong> (opcional).</li>
+<li><strong>Cidade</strong>* (vem «Cuiabá») e <strong>UF</strong>* (vem «MT»).</li>
+<li><strong>Data do despacho</strong>*: vem com a data de hoje.</li>
+</ul>
+<p><strong>Autoridade signatária</strong></p>
+<ul>
+<li><strong>Nome completo</strong>*: sem o posto.</li>
+<li><strong>Posto</strong>*: escolha na lista.</li>
+<li><strong>RGPMMT / matrícula</strong>*: por exemplo, 123.456 (RG) ou 1234567 (matrícula).</li>
+<li><strong>Função / cargo</strong>*: a função que aparece abaixo da assinatura (exemplo: «Comandante do 4º BPM – Autoridade de Polícia Judiciária Militar»).</li>
+<li><strong>Ato que confere a atribuição</strong> (opcional): ato de designação ou delegação, citado no preâmbulo (exemplo: «Portaria nº 123/GCG/2026»).</li>
+</ul>
+<p><strong>Prazo</strong></p>
+<ul>
+<li><strong>Prazo (dias)</strong> (opcional): se você deixar em branco, o sistema propõe o prazo previsto em lei para o caso (por exemplo, 40 dias para IPM com investigado solto, conforme o CPPM, art. 20) e o mostra com a marca «proposto pelo sistema» e a norma. Você pode alterar. Se a lei não permitir fixar o número de dias com segurança, o despacho dirá «no prazo legal, a ser fixado na portaria».</li>
+</ul>
+<p><strong>Valores lembrados:</strong> o navegador lembra alguns campos do último uso (marcados «lembrado»), para poupar digitação. Confira se valem para o despacho atual. <strong>Destinatário, prazo e encarregado nunca são lembrados.</strong> O botão <strong>«Limpar campos lembrados»</strong> apaga esses valores.</p>
+<p><strong>Mudou prazo, encarregado ou destinatário depois da redação?</strong> Ao baixar, aparece a janela «Campos alterados após a redação». Clique em <strong>«Reescrever»</strong> para o sistema refazer o despacho com os novos valores, sem reler o processo, ou em «Cancelar» para baixar o documento como está.</p>
+<h3>6.11. Baixando os documentos (PDF e Word)</h3>
+<p>Para cada documento há dois botões: <strong>PDF</strong> (leitura e impressão) e <strong>Word</strong> (editável, .docx). O download passa por algumas telas, na ordem abaixo. Recusar em qualquer delas não baixa nada.</p>
+<ol>
+<li><strong>Pendências antes de baixar</strong> (só se houver itens em «Resolva antes de assinar»): a janela lista as pendências e oferece:
+   - <strong>«Aplicar correção sugerida»</strong> (só quando há correção automática segura): o sistema aplica, mostra o processamento e, ao fim, exibe «Correção aplicada» com o botão para baixar de novo;
+   - <strong>«Baixar assim mesmo»</strong>: segue com o documento como está; as pendências continuam no painel e no relatório;
+   - <strong>«Cancelar»</strong>.</li>
+<li><strong>Alerta de integridade</strong> (só se houver alerta máximo ainda não lido): veja o capítulo 8.</li>
+<li><strong>Responsabilidade do usuário</strong>: tela que lembra que o documento foi gerado por ferramenta de apoio com inteligência artificial e que a conferência integral é sua. Clique em <strong>«Li e vou conferir integralmente»</strong>.</li>
+<li><strong>Arquivo pronto</strong>: mostra o nome e o tamanho do arquivo. Clique em <strong>«Baixar»</strong>. Se o ambiente bloquear o download, use <strong>«Abrir em nova aba»</strong> e salve pelo navegador.</li>
+</ol>
+<p>Campos obrigatórios em branco? Aparece «Preencha os campos destacados em vermelho e clique de novo em baixar».</p>
+<hr />
+<h2>7. Apensamento e forçar apensamento</h2>
+<h3>7.1. Quando usar</h3>
+<p>Use o apensamento quando você souber que <strong>já existe procedimento instaurado sobre o mesmo fato</strong> (por exemplo, um IPM já aberto por portaria). Apensar é juntar o expediente novo ao procedimento existente, para evitar dupla apuração e decisões contraditórias.</p>
+<p>O JAPRO <strong>não consulta outros sistemas</strong>: é você quem informa a existência do procedimento, anexando a portaria.</p>
+<h3>7.2. Passo a passo do cruzamento</h3>
+<ol>
+<li>Faça a análise normal do expediente (capítulo 5).</li>
+<li>No painel do resultado, no quadro <strong>«Já existe procedimento instaurado sobre este fato?»</strong>, clique em <strong>«Caso de apensamento»</strong>.</li>
+<li>Em <strong>«Portaria do procedimento já instaurado»</strong>, clique em <strong>«Selecionar a portaria»</strong> e anexe a portaria e, se houver, peças do procedimento (PDF, DOCX, TXT ou imagem).</li>
+<li>Clique em <strong>«Analisar cruzamento»</strong>. (Para desistir, clique em «Cancelar».)</li>
+</ol>
+<p>O sistema então executa as etapas próprias do apensamento: leitura das páginas digitalizadas do documento anexado (se houver), leitura completa do documento anexado, conferência dos trechos, <strong>cruzamento entre a denúncia e o documento anexado</strong> (critério a critério: mesmo fato, mesmos envolvidos e mesmo objeto de apuração), revisão independente do cruzamento e montagem dos documentos.</p>
+<h3>7.3. Interpretando o resultado do cruzamento</h3>
+<ul>
+<li><strong>Cabe o apensamento</strong>: o cruzamento demonstrou que o procedimento já instaurado abrange o fato noticiado. O sistema gera o relatório do cruzamento e o <strong>despacho de apensamento</strong>, com as ordens de juntada, remessa de cópia ao responsável pelo procedimento de destino e comunicação à origem.</li>
+<li><strong>Não cabe apensamento/juntada</strong>: o cruzamento não demonstrou identidade de fato suficiente. Os motivos aparecem no relatório (por exemplo, critério sem coincidência ou com coincidência parcial). Você escolhe como seguir:</li>
+<li><strong>«Retomar o juízo de admissibilidade anterior»</strong>: volta ao resultado da análise original;</li>
+<li><strong>«Forçar apensamento»</strong>: veja o item 7.4.</li>
+</ul>
+<p>O sistema também avisa quando o documento anexado não é portaria da PMMT (por exemplo, é um processo judicial).</p>
+<p>Depois de gerar o despacho de apensamento, você pode <strong>«Voltar ao juízo de admissibilidade anterior»</strong> a qualquer momento. Os resultados já obtidos ficam acessíveis pelos botões «Ver o resultado do cruzamento já feito» ou «Ver o despacho de apensamento já gerado».</p>
+<h3>7.4. Forçar o apensamento</h3>
+<p><strong>O que é:</strong> determinar o apensamento <strong>contra a conclusão técnica do cruzamento</strong>. A decisão fica registrada como sua, e o despacho transcreve a sua justificativa.</p>
+<p><strong>Quando cabe:</strong> só é juridicamente sustentável quando houver ao menos um destes motivos:</p>
+<ul>
+<li>ordem judicial ou requisição do Ministério Público (indique o juízo, o número do processo e a data);</li>
+<li>decisão de autoridade superior (quem decidiu, em qual documento e quando);</li>
+<li>identidade ou conexão do fato que os documentos não mostraram (mesmo evento, mesmos envolvidos, mesma data e local);</li>
+<li>risco de dupla apuração ou de decisões contraditórias sobre o mesmo fato.</li>
+</ul>
+<p>Sem nenhum desses motivos, prefira voltar e retomar o juízo de admissibilidade anterior.</p>
+<p><strong>Passo a passo:</strong></p>
+<ol>
+<li>Leia a explicação do passo 1 («O que é forçar e quando cabe»).</li>
+<li><strong>Justificativa (passo 2):</strong> escreva por que o apensamento deve ser feito. Diga quem determinou ou pediu (juízo, Ministério Público, autoridade superior), cite o documento (tipo, número e data), indique o procedimento de destino (por exemplo, o IPM e a portaria que o instaurou) e explique a ligação com o expediente (mesmo fato, mesmas pessoas, mesma data e local). Você pode digitar, usar o botão <strong>«Ditar por voz»</strong> ou deixar o sistema redigir.</li>
+</ol>
+<p>Exemplo: «Por meio do Ofício nº 312/2026, de 20/10/2026, o Comandante do 4º BPM informa que o mesmo fato já é apurado no IPM instaurado pela Portaria nº 047/IPM/4ºBPM/2026 e pede o apensamento, para evitar a dupla apuração.»
+3. <strong>Documento que fundamenta a justificativa (passo 3, opcional):</strong> anexe o documento citado (ofício, requisição do Ministério Público, decisão judicial), em PDF, DOCX, TXT ou imagem; pode anexar mais de um. Ele é lido e conferido como os autos, e o despacho cita as páginas dele e determina a sua juntada. Com o documento anexado, você pode clicar em <strong>«Redigir a partir do documento»</strong>: o sistema redige a justificativa usando só o que está no documento, e o texto aparece no campo para você revisar e editar.
+4. Clique em <strong>«Gerar documentos do apensamento»</strong>.</p>
+<p><strong>Importante:</strong></p>
+<ul>
+<li><strong>Vale exatamente o texto que estiver no campo</strong> no momento do clique em «Gerar documentos do apensamento»: é ele que o despacho transcreve.</li>
+<li>Os revisores automáticos do despacho <strong>não podem desfazer</strong> o apensamento: a decisão é sua. As discordâncias técnicas ficam registradas nos alertas da seção 10 do relatório e como ressalva no despacho.</li>
+<li>Se o documento da justificativa indicar outro procedimento de destino, o despacho apensa a esse procedimento, e a divergência fica no relatório para você resolver antes de assinar.</li>
+<li>Depois de forçar, você pode clicar em <strong>«Forçar de novo (outra justificativa ou documento)»</strong>.</li>
+</ul>
+<hr />
+<h2>8. Alertas de integridade do arquivo recebido e o Comunicado de alerta</h2>
+<h3>8.1. O que é</h3>
+<p>Antes da análise, o JAPRO examina os arquivos recebidos à procura de trechos preparados para influenciar a leitura automática, e não o processo. Quando encontra algo assim, o sistema <strong>neutraliza o trecho</strong> antes que ele chegue ao motor de análise: o trecho não influencia o resultado. Ao mesmo tempo, mostra um alerta para você conferir.</p>
+<p>Há dois níveis:</p>
+<ul>
+<li><strong>Alerta máximo</strong>: possível tentativa de dirigir a análise automática.</li>
+<li><strong>Atenção</strong>: sinais que podem ser legítimos. O sistema os neutralizou por cautela e os mostra para a sua conferência.</li>
+</ul>
+<h3>8.2. Se aparecer um alerta máximo</h3>
+<p>Durante o processamento, aparece um aviso curto («Alerta máximo de integridade: … possíveis tentativas de dirigir a análise automática. Os trechos já foram neutralizados e a análise segue normalmente»), com o link <strong>«Ver o alerta»</strong>. No painel do resultado aparece o quadro completo <strong>«Alerta máximo · integridade do documento de entrada»</strong>. Ele não se fecha sozinho.</p>
+<p>Cada item mostra:</p>
+<ul>
+<li><strong>O que foi encontrado</strong>;</li>
+<li><strong>Onde</strong> (arquivo e página);</li>
+<li><strong>Trecho</strong> (quando houver);</li>
+<li><strong>Por que é suspeito</strong>;</li>
+<li><strong>O que o sistema fez</strong>;</li>
+<li><strong>O que você deve fazer</strong>.</li>
+</ul>
+<p><strong>O que fazer:</strong></p>
+<ol>
+<li>Leia cada item com calma.</li>
+<li>Confira o trecho no documento original, na página indicada.</li>
+<li>Clique em <strong>«Li e entendi»</strong>. Os downloads só são liberados depois dessa confirmação, que fica registrada com data e hora («Lido e entendido em …»). Se você tentar baixar antes, aparece a janela «Antes de baixar, leia o alerta de integridade», com as opções «Cancelar», «Ver os detalhes» e «Li e entendi».</li>
+<li>Decida se a ocorrência merece providência. Essa decisão é sua. Se merecer, gere o Comunicado de alerta (item 8.4).</li>
+</ol>
+<p><strong>Onde o alerta aparece nos documentos:</strong> o despacho <strong>não menciona</strong> esses achados. O Relatório Sintético os registra na seção <strong>«Integridade do documento de entrada»</strong>, com nível, achado, local e trecho.</p>
+<p><strong>Não tire conclusões precipitadas.</strong> Um alerta não prova que alguém agiu de má-fé: elementos estranhos podem surgir em qualquer etapa de produção, conversão, digitalização ou tramitação do arquivo. Por isso, o comunicado gerado pelo sistema registra fatos e não atribui autoria a ninguém.</p>
+<h3>8.3. Se aparecer um ponto de «Atenção»</h3>
+<p>O quadro <strong>«Atenção – pontos a conferir na integridade do documento de entrada»</strong> lista sinais que podem ser legítimos. Confira cada um no documento original. Não é preciso confirmar leitura para baixar.</p>
+<h3>8.4. O Comunicado de alerta</h3>
+<p>Depois que você clica em «Li e entendi», aparece o botão <strong>«GERAR COMUNICADO DE ALERTA»</strong>. Ele gera um documento oficial (Word e PDF), no padrão dos despachos, que comunica as ocorrências encontradas no arquivo recebido, com a localização exata de cada uma e imagens extraídas do próprio arquivo que as comprovam. O texto é montado pelo sistema a partir de modelos fixos, sem acusar ninguém.</p>
+<h4>Os três tipos (finalidades)</h4>
+<p>Marque uma ou mais finalidades. <strong>Cada finalidade marcada gera um comunicado separado</strong>, com assunto, abertura, enquadramento e pedido próprios.</p>
+<ol>
+<li><strong>Apurar o fato</strong>: comunica a ocorrência à autoridade competente e solicita a apuração das circunstâncias em que os elementos passaram a integrar o arquivo. Dirigido a um destinatário (autoridade ou setor).</li>
+<li><strong>Sugerir abertura de procedimento</strong>: expõe os achados e sugere que a autoridade competente avalie a abertura do procedimento cabível, sem antecipar juízo sobre responsabilidade. Dirigido a um destinatário.</li>
+<li><strong>Responder ao remetente</strong>: informa a quem enviou o documento, em tom colaborativo, que o arquivo contém elementos estranhos, aptos a interferir na análise, e pede a verificação na origem e o reenvio do original. Dirigido ao remetente.</li>
+</ol>
+<p>Exemplo: marque «Apurar o fato» e «Responder ao remetente» para gerar dois comunicados.</p>
+<h4>Campos do formulário</h4>
+<p><strong>Destinatário</strong> (aparece conforme as finalidades marcadas):</p>
+<ul>
+<li><strong>Tratamento do destinatário / do remetente</strong>*: «Ao», «À», «Aos» ou «Às». Use «Ao» para destinatário masculino (senhor, juízo, comando) e «À» para feminino (senhora, coordenadoria, vara). O sistema sugere conforme a primeira palavra; confira.</li>
+<li><strong>Destinatário (apuração/procedimento)</strong>*: a autoridade ou o setor que recebe o comunicado, escrito como deve aparecer depois de «Ao» ou «À», com o tratamento e o cargo (exemplo: «Senhor Corregedor-Geral da Polícia Militar do Estado de Mato Grosso»).</li>
+<li><strong>Remetente do documento (resposta)</strong>*: quem enviou o documento analisado. Vem preenchido quando o processamento identificou a origem; confira (exemplo: «Juízo da 1ª Vara Criminal de Várzea Grande»).</li>
+</ul>
+<p><strong>Emissão:</strong></p>
+<ul>
+<li><strong>Setor comunicante</strong>: nome por extenso e com a sigla (exemplo: «Coordenadoria de Instauração e Controle Processual – CICP/CorregPM»).</li>
+<li><strong>Sigla de numeração</strong>: o que vem depois de número/ano na linha «COMUNICADO Nº».</li>
+<li><strong>Cidade</strong>.</li>
+<li><strong>Número do comunicado</strong> (um para cada finalidade, opcional): sem o ano. Em branco, o documento sai com «____» para preenchimento posterior.</li>
+</ul>
+<p><strong>Signatário:</strong></p>
+<ul>
+<li><strong>Posto ou graduação do signatário</strong>;</li>
+<li><strong>RGPMMT ou matrícula do signatário</strong> (só os números, com ou sem ponto);</li>
+<li><strong>Nome completo do signatário</strong> (sem o posto; vem preenchido com o signatário do despacho, quando já informado);</li>
+<li><strong>Cargo ou função do signatário</strong> (exemplo: «Coordenador de Instauração e Controle Processual»).</li>
+</ul>
+<p>Se houver também pontos de atenção, aparece a opção <strong>«Incluir também os pontos de atenção»</strong>, identificados como tal no comunicado.</p>
+<p>Clique em <strong>«Gerar comunicados»</strong>. Depois, baixe cada documento no formato desejado. Antes do download aparece a tela de responsabilidade, como nos despachos. <strong>Confira o texto e as imagens antes de assinar e encaminhar.</strong></p>
+<p>O comunicado registra que o arquivo recebido foi preservado sem alteração, indica a impressão digital (SHA-256) do arquivo para conferir qualquer cópia e declara que os elementos foram desconsiderados na análise. O Relatório Sintético registra os comunicados gerados.</p>
+<hr />
+<h2>9. Cadeia de custódia e conferência de autenticidade dos documentos</h2>
+<h3>9.1. Para que serve</h3>
+<p>A cadeia de custódia digital permite provar, a qualquer tempo:</p>
+<ul>
+<li>que o relatório e o despacho foram produzidos a partir exatamente daqueles arquivos dos autos;</li>
+<li>que um relatório ou despacho não foi alterado depois de gerado;</li>
+<li>de qual JAPRO (de qual chave de emissor) o documento saiu.</li>
+</ul>
+<h3>9.2. Os elementos de identificação</h3>
+<ul>
+<li><strong>Impressão digital (código SHA-256):</strong> funciona como o DNA do arquivo. Basta mudar uma vírgula para que ela mude por completo. O Relatório Sintético registra a impressão digital de cada arquivo analisado (seção 11).</li>
+<li><strong>Código de verificação:</strong> aparece no rodapé de cada página do relatório. É calculado sobre o texto e revela qualquer alteração feita depois da geração.</li>
+<li><strong>Chave do emissor:</strong> também no rodapé do relatório, no formato XXXX-XXXX-XXXX. Identifica o navegador em que o documento foi gerado.</li>
+<li><strong>Assinatura digital do relatório:</strong> vai dentro do arquivo e protege, de uma só vez, o texto, o código, as impressões digitais dos autos e o vínculo com o despacho da mesma análise.</li>
+<li><strong>Assinatura invisível do despacho:</strong> fica nas propriedades internas do arquivo (Word ou PDF). <strong>Não aparece</strong> no texto, no cabeçalho, no rodapé nem na impressão: o despacho continua sendo ato pessoal de quem o assina. O rodapé do despacho traz só «Despacho nº … · Página i de n», sem o nome do sistema.</li>
+</ul>
+<p>Essas assinaturas são do JAPRO e <strong>não substituem a assinatura oficial do processo</strong>.</p>
+<h3>9.3. Como conferir um documento</h3>
+<ol>
+<li>Abra a aba <strong>«Outras ferramentas de apoio»</strong> e vá ao quadro <strong>«Verificar integridade e assinatura de um relatório ou despacho»</strong>.</li>
+<li>Arraste para o quadro <strong>«Arraste aqui o relatório, os arquivos originais e o despacho ou clique para escolher»</strong> os arquivos que quer conferir, todos de uma vez:
+   - o <strong>relatório</strong> baixado (Word ou PDF);
+   - se quiser, os <strong>arquivos originais dos autos</strong>;
+   - se quiser, o <strong>despacho</strong>.</li>
+<li>Leia o resultado.</li>
+</ol>
+<p>Nada é enviado pela internet: tudo é calculado no seu computador. A conferência funciona em qualquer computador e em qualquer navegador atualizado, sem depender da máquina em que o documento foi gerado.</p>
+<p><strong>Atenção:</strong> o sistema não guarda cópia dos processos analisados. Quem guarda a impressão digital dos autos e do despacho é o próprio relatório. Por isso:</p>
+<ul>
+<li><strong>a denúncia ou o processo, sozinho, não pode ser conferido</strong>: arraste-o junto com o relatório da mesma análise;</li>
+<li>o <strong>despacho</strong> gerado na versão atual pode ser conferido sozinho, pela assinatura invisível.</li>
+</ul>
+<h3>9.4. Como ler o resultado</h3>
+<p><strong>Relatório:</strong></p>
+<ul>
+<li><strong>«Documento autêntico e sem alterações»</strong> / <strong>«Relatório íntegro e assinado»</strong>: o texto é exatamente o que saiu do sistema e a assinatura confere. Ao lado aparece «Assinatura válida da chave XXXX-XXXX-XXXX» e, se for a chave do navegador em uso, a indicação de que foi gerado nele. Compare a chave com a registrada para o emissor esperado.</li>
+<li><strong>«Relatório íntegro» (sem assinatura)</strong>: relatório gerado por versão anterior do sistema ou em ambiente sem chave de emissor; a conferência foi feita pelo código de verificação.</li>
+<li><strong>«Relatório ALTERADO depois da geração»</strong> / <strong>«Documento ALTERADO depois de gerado»</strong>: houve mudança no texto, no código, nas impressões digitais ou na assinatura depois do download, ainda que mínima. Vale o arquivo original entregue pelo sistema.</li>
+<li><strong>«Não foi possível confirmar quem gerou»</strong>: o texto não foi modificado, mas a assinatura digital saiu do arquivo (ele foi salvo em outro programa, convertido ou impresso de novo). Para confirmar a autoria, peça o arquivo original entregue pelo sistema.</li>
+<li><strong>«Não foi possível confirmar a assinatura»</strong>: o texto não foi modificado, mas o navegador em uso não consegue conferir a assinatura. Abra a ferramenta num navegador atualizado.</li>
+<li><strong>«Gerado em outro computador: chave …»</strong>: compare com a chave informada pelo analista.</li>
+</ul>
+<p><strong>Arquivos dos autos:</strong></p>
+<ul>
+<li><strong>«Este é exatamente o arquivo analisado no relatório…»</strong> / <strong>«Confere com o arquivo registrado no relatório»</strong>: é o mesmo arquivo que foi analisado.</li>
+<li><strong>«Este arquivo NÃO é o que foi analisado no relatório»</strong>: é outro arquivo ou outra versão dele (por exemplo, o PDF dos autos foi completado com novas peças).</li>
+<li><strong>«Arquivo dos autos: sem relatório para comparar»</strong>: arraste o arquivo junto com o relatório da mesma análise.</li>
+</ul>
+<p><strong>Despacho:</strong></p>
+<ul>
+<li><strong>«Despacho íntegro»</strong> / <strong>«Documento autêntico e sem alterações»</strong>: o texto é exatamente o produzido pelo sistema.</li>
+<li><strong>«Despacho autêntico (com carimbos do sistema de protocolo)»</strong> ou <strong>«contido integralmente»</strong>: o texto do despacho está inteiro e sem alterações; o sistema de protocolo só acrescentou carimbos, cabeçalhos, rodapés ou números de página. A lista mostra quais acréscimos.</li>
+<li><strong>«Texto autêntico, com acréscimos a conferir»</strong>: o texto não foi modificado, mas o documento recebeu acréscimos que não parecem carimbos de protocolo. Confira-os. Quem julga se são legítimos é você.</li>
+<li><strong>«Despacho ALTERADO após a geração»</strong>: o texto mudou depois do download. A ferramenta mostra <strong>onde mudou</strong>: o texto retirado aparece <strong>riscado em vermelho</strong> e o acrescentado <strong>em verde</strong>.</li>
+<li><strong>«Despacho NÃO confere com o relatório»</strong>: o texto é diferente do despacho gerado com o relatório apresentado (foi modificado ou pertence a outra análise).</li>
+<li><strong>«Não foi possível confirmar»</strong>: o arquivo não traz a proteção interna (foi impresso de novo, digitalizado, colado em outro editor ou gerado por versão anterior). Arraste junto o relatório da mesma análise para conferir.</li>
+</ul>
+<h3>9.5. O que retira a assinatura de um arquivo</h3>
+<p>A assinatura acompanha a cópia do arquivo e um novo «Salvar como» no Word. Ela <strong>sai</strong> do arquivo quando você imprime de novo em PDF, digitaliza, converte o arquivo ou cola o texto em outro editor (por exemplo, no SIGADOC). Nesses casos, a ferramenta avisa, confere pelo código ou pela cópia guardada no relatório, e vale o arquivo original entregue pelo sistema.</p>
+<p><strong>Dica prática:</strong> guarde o relatório junto com os autos e o arquivo original do despacho baixado do JAPRO. Com eles, qualquer dúvida futura pode ser esclarecida.</p>
+<h3>9.6. Exemplos de uso</h3>
+<ol>
+<li>Um relatório circulou por e-mail e você quer saber se alguém alterou o texto depois de baixado.</li>
+<li>A chefia quer confirmar que o relatório juntado ao processo foi produzido pelo analista responsável: a assinatura válida com a chave registrada dele responde.</li>
+<li>Meses depois, surge a dúvida sobre qual versão do processo foi analisada: arraste o relatório e o PDF que você tem, e o sistema diz se é exatamente o mesmo arquivo.</li>
+<li>Você quer saber se o despacho que está no processo é o mesmo que o sistema gerou com aquele relatório: arraste os dois juntos.</li>
+</ol>
+<hr />
+<h2>10. Privacidade, sigilo e encerramento de sessão</h2>
+<h3>10.1. Por que isso importa</h3>
+<p>Os autos contêm dados pessoais, protegidos pela Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018, conhecida como LGPD), e o inquérito é sigiloso (Código de Processo Penal Militar, art. 16). Quem usa o JAPRO deve cuidar desse sigilo.</p>
+<h3>10.2. Para onde vão os dados</h3>
+<ul>
+<li>O conteúdo dos autos é enviado <strong>somente ao serviço de inteligência artificial em uso</strong> (no JAPRO aberto no Gemini, o próprio Gemini), para a realização da análise, e a nenhum outro destino. O sistema não tem servidor próprio para os autos.</li>
+<li>Os documentos gerados são montados no seu navegador.</li>
+<li>O uso da ferramenta (análises concluídas, documentos baixados e comunicados gerados) é registrado, para fins de gestão e de segurança, <strong>somente com metadados</strong> (por exemplo, código da chave do emissor, versão, quantidade de páginas e tipo de resultado). <strong>Nenhum texto dos autos, número de processo, nome de pessoa ou nome de arquivo é enviado.</strong></li>
+<li>O registro da chave guarda o nome, o posto ou graduação e o e-mail institucional de quem a registrou, para ligar os documentos assinados a quem os gerou.</li>
+<li>A conferência de autenticidade (capítulo 9) é feita no seu computador, sem envio de dados.</li>
+</ul>
+<h3>10.3. Boas práticas</h3>
+<ul>
+<li>Use o JAPRO com a sua conta institucional e no seu próprio navegador. Quem usa o navegador de outra pessoa assina com a chave daquele navegador.</li>
+<li>Em <strong>computador compartilhado</strong>, encerre a sessão ao terminar (item 10.4).</li>
+<li>Não encaminhe trechos dos autos por canais não oficiais. Ao pedir ajuda ao Plantão, descreva o problema e envie a mensagem de erro, sem conteúdo sigiloso.</li>
+</ul>
+<h3>10.4. «Encerrar sessão e apagar dados deste navegador»</h3>
+<p>O botão fica no <strong>rodapé</strong> da tela. Ao clicar, aparece a janela de confirmação «Encerrar sessão e apagar dados deste navegador?». Se você confirmar em <strong>«Apagar e encerrar»</strong>, o sistema apaga do navegador:</p>
+<ul>
+<li>os campos lembrados;</li>
+<li>a análise guardada para retomar;</li>
+<li>as configurações salvas;</li>
+<li>a <strong>chave do emissor</strong> deste navegador.</li>
+</ul>
+<p>A página é recarregada em seguida, sem nenhum arquivo carregado, e aparece a mensagem «Sessão encerrada: os dados deste navegador foram apagados».</p>
+<p>Consequências:</p>
+<ul>
+<li><strong>Documentos ainda não baixados serão perdidos.</strong> Baixe antes o que quiser guardar.</li>
+<li>Se houver processamento em andamento, ele será interrompido.</li>
+<li>Os arquivos já baixados no computador <strong>não são afetados</strong>.</li>
+<li>Os relatórios já emitidos continuam conferindo como assinados pela chave antiga. Os próximos sairão com uma chave nova, e o sistema pedirá o registro dela antes do próximo uso.</li>
+</ul>
+<hr />
+<h2>11. Solução de problemas</h2>
+<p>Cada problema traz o <strong>sintoma</strong> (o que você vê), a <strong>causa provável</strong> e <strong>o que fazer</strong>. Se nada resolver, procure o Plantão da Corregedoria pelo WhatsApp (65) 98170-0385.</p>
+<h3>11.1. Acesso e abertura</h3>
+<p><strong>Sintoma: o link abre uma página em branco, preta ou com a mensagem «Algo deu errado».</strong>
+- Causa provável: falha momentânea no carregamento dentro do Gemini.
+- O que fazer: recarregue a página uma vez. Se continuar, instale o JAPRO no seu próprio Gemini (item 2.4).</p>
+<p><strong>Sintoma: o Gemini respondeu só com texto e o sistema não apareceu.</strong>
+- Causa provável: o Canvas não estava ligado.
+- O que fazer: volte ao passo 2 do item 2.4, ligue o Canvas (sinal «+» e depois «Canvas») e envie o comando de novo.</p>
+<p><strong>Sintoma: aparece «Carregando o JAPRO…» e fica parado.</strong>
+- Causa provável: carregamento interrompido.
+- O que fazer: recarregue a página do Gemini (tecla F5; no celular, puxe a tela para baixo).</p>
+<p><strong>Sintoma: o sistema abriu, mas com aparência estranha ou incompleta.</strong>
+- Causa provável: o Gemini alterou o comando ao criar o Canvas.
+- O que fazer: abra uma conversa nova e repita os passos 2 a 5 do item 2.4, colando o comando sem mudar nada.</p>
+<p><strong>Sintoma: «Não foi possível carregar o JAPRO agora (sem conexão com o servidor)».</strong>
+- Causa provável: sem internet ou servidor momentaneamente indisponível.
+- O que fazer: verifique a internet e recarregue a página.</p>
+<p><strong>Sintoma: tela «JAPRO não foi carregado por segurança».</strong>
+- Causa provável: a versão disponível naquele momento não passou na conferência da assinatura digital da Corregedoria-Geral. Por segurança, o sistema não foi executado; nenhum arquivo foi lido e nenhum dado foi enviado.
+- O que fazer: não use cópias de outra origem. Avise o Plantão da Corregedoria e tente de novo mais tarde.</p>
+<p><strong>Sintoma: no celular, o sistema não abre sozinho.</strong>
+- O que fazer: toque no quadro «JAPRO Corregedoria-Geral» que aparece na resposta do Gemini. Para mais conforto, use a tela cheia (⤢).</p>
+<p><strong>Sintoma: não encontro mais o JAPRO no Gemini.</strong>
+- O que fazer: abra a lista de conversas (lado esquerdo ou menu ☰) e procure a conversa com «JAPRO» no nome. Se não achar, repita a instalação (item 2.4). Dica: fixe ou renomeie a conversa.</p>
+<p><strong>Sintoma: o Gemini está conectado com uma conta pessoal.</strong>
+- O que fazer: clique no ícone da conta e troque para a conta @pm.mt.gov.br.</p>
+<h3>11.2. Registro da chave</h3>
+<p><strong>Sintoma: o sistema pede o registro de novo.</strong>
+- Causa provável: outro navegador ou computador, janela anônima, dados do navegador apagados ou uso de «Encerrar sessão e apagar dados».
+- O que fazer: registre de novo (item 3.2). É normal e não prejudica os documentos já emitidos.</p>
+<p><strong>Sintoma: o código não chega no e-mail.</strong>
+- O que fazer: aguarde alguns minutos; confira a caixa de spam; confira se digitou o e-mail institucional corretamente; clique em «Reenviar código». O código vale por 15 minutos.</p>
+<p><strong>Sintoma: «Código não aceito. Confira os 6 dígitos ou peça um novo código».</strong>
+- Causa provável: dígito errado ou código vencido (mais de 15 minutos).
+- O que fazer: digite de novo os 6 dígitos ou clique em «Reenviar código» e use o código mais recente.</p>
+<p><strong>Sintoma: «Digite os 6 dígitos do código recebido por e-mail».</strong>
+- O que fazer: o código tem exatamente 6 números. Digite todos.</p>
+<p><strong>Sintoma: o e-mail não é aceito.</strong>
+- Causa provável: e-mail que não é institucional ou digitado com erro. O registro só aceita e-mails institucionais (@pm.mt.gov.br).
+- O que fazer: informe o seu e-mail funcional terminado em @pm.mt.gov.br. Se o registro recusar o pedido, a tela mostra o motivo; confira os dados e tente de novo.</p>
+<p><strong>Sintoma: «Informe o nome completo (nome e sobrenome)» ou «Escolha o posto ou a graduação».</strong>
+- O que fazer: preencha o nome com nome e sobrenome e escolha o posto ou a graduação na lista.</p>
+<p><strong>Sintoma: «O registro central não respondeu agora (sem conexão ou serviço fora do ar)» ou a tela de entrada com «Tentar de novo».</strong>
+- O que fazer: aguarde alguns instantes e clique de novo no botão («Tentar de novo»). Verifique a internet.</p>
+<p><strong>Sintoma: «Este navegador não conseguiu criar a chave de segurança do sistema».</strong>
+- Causa provável: navegador desatualizado ou com recursos bloqueados.
+- O que fazer: use um navegador atualizado, de preferência o Google Chrome, e tente de novo. Evite janela anônima.</p>
+<p><strong>Sintoma: «Chave de emissor bloqueada» ou «acesso deste navegador ao JAPRO está suspenso».</strong>
+- O que fazer: procure o administrador do sistema na Corregedoria-Geral (CICP). A análise na tela continua disponível para consulta.</p>
+<p><strong>Sintoma: «A análise não foi iniciada: o registro da chave é obrigatório» ou «Nada foi baixado: registre a chave do emissor».</strong>
+- Causa provável: você fechou a janela de registro com «Agora não».
+- O que fazer: clique de novo em «Iniciar análise» (ou em baixar) e conclua o registro.</p>
+<h3>11.3. Arquivos</h3>
+<p><strong>Sintoma: o arquivo não carrega.</strong>
+- Mensagens possíveis e o que fazer:
+  - «está protegido por senha»: remova a senha do PDF e carregue de novo;
+  - «está no formato Word antigo (.doc)»: salve como .docx ou PDF e carregue de novo;
+  - «está corrompido ou não pôde ser aberto»: gere ou baixe o arquivo de novo a partir da origem;
+  - «O navegador não conseguiu ler… Verifique a conexão com a internet… e recarregue»: verifique a internet e recarregue a página.</p>
+<p><strong>Sintoma: o arquivo é muito grande.</strong>
+- Não há limite de tamanho, e o JAPRO lê PDFs com mais de mil páginas. Processos grandes levam mais tempo. Prefira o computador e mantenha a aba aberta até o fim.</p>
+<p><strong>Sintoma: o PDF é digitalizado (escaneado).</strong>
+- É aceito. O sistema avisa quantas páginas são digitalizadas e as lê por leitura óptica. Se algumas não puderem ser lidas, aparece o aviso «Páginas ilegíveis» ou «Páginas não lidas pela IA» em «Confira»: leia essas páginas você mesmo nos autos.</p>
+<p><strong>Sintoma: as referências mostram «seção» em vez de «página».</strong>
+- Causa: o arquivo (Word ou texto) não tem paginação fixa. As referências indicam seções. Se precisar de página, converta o arquivo para PDF e carregue o PDF.</p>
+<p><strong>Sintoma: «A análise já começou com este arquivo. Use “Nova análise” para recomeçar».</strong>
+- O que fazer: para trocar ou acrescentar arquivos depois de iniciar, clique em «Nova análise» (baixe antes o que quiser guardar) e carregue tudo de novo.</p>
+<p><strong>Sintoma: a triagem diz que o arquivo não parece denúncia.</strong>
+- O que fazer: veja o item 5.6. Anexe o arquivo certo ou, se o documento relata conduta de policial militar, clique em «Prosseguir mesmo assim como denúncia».</p>
+<h3>11.4. Processamento</h3>
+<p><strong>Sintoma: o botão «Iniciar análise» está desabilitado.</strong>
+- Causa: falta concluir a etapa 2.
+- O que fazer: informe o encarregado e o destinatário ou marque as caixas «ainda não definido». Confira também se algum arquivo foi carregado.</p>
+<p><strong>Sintoma: a análise parou no meio com uma mensagem de erro do serviço de inteligência artificial (por exemplo, nenhum modelo disponível no momento).</strong>
+- Causa provável: indisponibilidade ou limite momentâneo do serviço.
+- O que fazer: aguarde alguns minutos e clique em <strong>«Retomar da etapa interrompida»</strong>. O que já foi feito fica guardado, e a análise continua do ponto em que parou.</p>
+<p><strong>Sintoma: a análise está demorando.</strong>
+- O que fazer: acompanhe o «Tempo restante», que se ajusta ao ritmo real. Processos grandes e digitalizados demoram mais. Não feche a aba. Se o processamento parecer travado por muito tempo, clique em «Interromper» e depois em «Retomar da etapa interrompida».</p>
+<p><strong>Sintoma: cliquei em «Interromper» sem querer.</strong>
+- O que fazer: clique em «Retomar da etapa interrompida». Aparece a mensagem: «Interrompendo… o que já foi feito fica guardado; use Retomar para continuar».</p>
+<p><strong>Sintoma: fechei a página ou o Gemini recarregou no meio da análise.</strong>
+- O que fazer: abra o JAPRO de novo no mesmo navegador e carregue os mesmos autos. Aparece «Análise anterior encontrada»: clique em «Retomar».</p>
+<p><strong>Sintoma: «Não foi possível restaurar a análise anterior; comece uma nova análise».</strong>
+- O que fazer: clique em «Nova análise» e refaça o processamento.</p>
+<p><strong>Sintoma: aviso «Conferência incompleta».</strong>
+- O que fazer: clique em «Reprocessar a conferência» (recomendado) ou baixe ciente da limitação e confira manualmente com atenção redobrada (item 6.8).</p>
+<p><strong>Sintoma: um botão sumiu (por exemplo, «Iniciar análise», «Interromper» ou «Retomar»).</strong>
+- Causa provável: os botões aparecem conforme o momento do processamento. Durante a triagem pausada, por exemplo, os botões de processamento ficam ocultos e aparecem as opções do aviso. Durante o processamento, algumas ações ficam bloqueadas.
+- O que fazer: aguarde o fim da etapa ou use as opções do aviso exibido. Se for necessário, clique em «Interromper». Se a tela parecer incompleta, recarregue a página e retome a análise anterior.</p>
+<p><strong>Sintoma: «Aguarde o fim do processamento para baixar o documento» ou «Aguarde o fim do processamento ou clique em Interromper».</strong>
+- O que fazer: espere a etapa terminar.</p>
+<h3>11.5. Resultado, correções e downloads</h3>
+<p><strong>Sintoma: o documento não baixa.</strong>
+- Verifique, na ordem:
+  1. Os campos obrigatórios do despacho estão preenchidos? Aparece «Preencha os campos destacados em vermelho e clique de novo em baixar».
+  2. Há alerta máximo ainda não lido? Leia e clique em «Li e entendi».
+  3. Você clicou em «Li e vou conferir integralmente» na tela de responsabilidade e depois em «Baixar» na tela «Arquivo pronto»? O download só acontece no clique em «Baixar».
+  4. O ambiente bloqueou o download? Use «Abrir em nova aba» e salve pelo navegador.
+  5. A chave está registrada e não bloqueada? Veja o item 11.2.
+  6. Apareceu «o documento saiu vazio»? Tente de novo; se repetir, recarregue a página.</p>
+<p><strong>Sintoma: «O salvamento direto não está disponível aqui. Clique em Baixar outra vez».</strong>
+- O que fazer: clique em «Baixar» de novo.</p>
+<p><strong>Sintoma: baixei o despacho e ele não tem a correção que apliquei.</strong>
+- Causa: o arquivo baixado antes da correção não a contém.
+- O que fazer: baixe o documento de novo depois de aplicar a correção.</p>
+<p><strong>Sintoma: a correção sugerida não aplica (não aparece o botão).</strong>
+- Causa: o sistema só oferece o botão quando a correção resolve a pendência sem criar outra. Se a troca criaria outra pendência, se o caso depende do seu julgamento ou se a pendência nasceu de outra correção, não há correção automática.
+- O que fazer: use o texto sugerido como modelo e corrija o trecho no despacho, baixado em Word (item 6.7).</p>
+<p><strong>Sintoma: «A correção foi marcada, mas a reescrita do despacho não terminou».</strong>
+- O que fazer: veja o aviso no painel 2 (processamento) e tente de novo. Nada foi baixado.</p>
+<p><strong>Sintoma: «Este trecho foi alterado depois desta correção; desfaça primeiro as correções mais recentes».</strong>
+- O que fazer: clique em «Desfazer» nas correções mais recentes, na ordem inversa, até chegar à que você quer desfazer.</p>
+<p><strong>Sintoma: o despacho saiu com prazo, encarregado ou destinatário antigos.</strong>
+- Causa: você mudou esses campos depois da redação.
+- O que fazer: ao baixar, escolha «Reescrever» na janela «Campos alterados após a redação».</p>
+<p><strong>Sintoma: o encarregado informado não aparece no despacho.</strong>
+- Causa provável: ele é incompatível com o investigado (por exemplo, posto inferior ao do investigado oficial, praça para investigado oficial, ou mesmo posto sem confirmação de antiguidade).
+- O que fazer: no aviso «Encarregado incompatível», clique em «Marcar encarregado a definir» (o despacho é reescrito) ou em «Informar outro encarregado», com um oficial de posto superior. No caso de mesmo posto, se ele for mais antigo, designe-o manualmente.</p>
+<p><strong>Sintoma: o prazo sugerido não apareceu.</strong>
+- Causa: a lei não permitiu fixar o número de dias com segurança para o caso.
+- O que fazer: informe o número de dias no campo «Prazo», se quiser. Sem ele, o despacho dirá «no prazo legal, a ser fixado na portaria».</p>
+<p><strong>Sintoma: a decisão sugerida me parece errada.</strong>
+- O que fazer: a decisão é sua. Leia a seção 1 e a seção 5 do relatório, confira os fatos nas páginas citadas e adote a medida que entender correta, ajustando o despacho. Se o sistema tiver errado, registre o erro (vídeo 5) e avise o Plantão.</p>
+<p><strong>Sintoma: o relatório cita página errada ou fato que não está nos autos.</strong>
+- O que fazer: prevalecem os autos. Corrija o documento e registre o erro (vídeo 5).</p>
+<h3>11.6. Verificação de autenticidade</h3>
+<p><strong>Sintoma: a verificação reprovou o documento («ALTERADO»).</strong>
+- Causa provável: o texto foi modificado depois de gerado, ou o arquivo pertence a outra análise.
+- O que fazer: no despacho, a ferramenta mostra o que mudou (riscado em vermelho e em verde). Vale o arquivo original entregue pelo sistema. Se a alteração foi feita de propósito pelo próprio analista (por exemplo, um ajuste de redação), isso é esperado: a verificação apenas mostra a diferença.</p>
+<p><strong>Sintoma: «Não foi possível confirmar quem gerou» ou «a assinatura digital saiu do arquivo».</strong>
+- Causa: o arquivo foi impresso de novo, convertido, digitalizado ou colado em outro editor.
+- O que fazer: peça o arquivo original entregue pelo sistema ou arraste junto o relatório da mesma análise.</p>
+<p><strong>Sintoma: «Não foi possível confirmar a assinatura» (o navegador não consegue conferir).</strong>
+- O que fazer: abra a ferramenta num navegador atualizado.</p>
+<p><strong>Sintoma: «Nenhum relatório ou despacho do sistema entre os arquivos».</strong>
+- O que fazer: para conferir arquivos dos autos, arraste-os junto com o relatório da mesma análise.</p>
+<p><strong>Sintoma: «Arquivos registrados no relatório que você não arrastou».</strong>
+- Significado: o relatório registra outros arquivos dos autos que não foram arrastados. Se quiser conferi-los, arraste-os também.</p>
+<p><strong>Sintoma: «Não foi possível concluir a verificação».</strong>
+- O que fazer: confira se o arquivo não está corrompido e tente de novo, de preferência com o arquivo original baixado do JAPRO.</p>
+<h3>11.7. Celular e tablet</h3>
+<p><strong>Sintoma: a tela fica apertada ou os botões ficam pequenos.</strong>
+- O que fazer: use a tela cheia (⤢). Gire o aparelho, se ajudar. Para processos grandes, prefira o computador.</p>
+<p><strong>Sintoma: a dica «?» não abre.</strong>
+- O que fazer: toque no sinal «?». Para fechar, toque de novo ou toque fora.</p>
+<p><strong>Sintoma: o download não acontece no celular.</strong>
+- O que fazer: na tela «Arquivo pronto», use «Abrir em nova aba» e salve pelo navegador.</p>
+<h3>11.8. Vídeos e recursos de apoio</h3>
+<p><strong>Sintoma: o vídeo, o Gemini Notebook ou o Compêndio pede permissão.</strong>
+- O que fazer: entre com a conta institucional @pm.mt.gov.br. No Gemini Notebook e no Compêndio, clique em «Solicitar acesso» (no Notebook, peça permissão como «Leitor») e aguarde a liberação pelo administrador.</p>
+<hr />
+<h2>12. Perguntas frequentes</h2>
+<p><strong>1. O que é o JAPRO?</strong>
+É a ferramenta da Corregedoria-Geral da PMMT, elaborada pela CICP, de apoio ao juízo de admissibilidade de denúncias e notícias de fato envolvendo policiais militares.</p>
+<p><strong>2. O JAPRO decide por mim?</strong>
+Não. Ele sugere a medida e prepara as minutas. A decisão e a assinatura são sempre da autoridade competente.</p>
+<p><strong>3. O JAPRO pode errar?</strong>
+Sim. Ele usa inteligência artificial e pode deixar de localizar uma informação, citar página errada ou escolher fundamento inadequado. As conferências automáticas reduzem esses erros, mas não os eliminam. A conferência é sua.</p>
+<p><strong>4. Quem pode usar o JAPRO?</strong>
+Qualquer autoridade de polícia judiciária militar da PMMT e quem a assessora, com e-mail institucional @pm.mt.gov.br.</p>
+<p><strong>5. Qual é o endereço do JAPRO?</strong>
+https://japro-cicp.github.io. Lá estão o botão «Abrir o JAPRO» e o passo a passo de instalação no Gemini.</p>
+<p><strong>6. Preciso instalar algum programa?</strong>
+Não. O JAPRO roda no Gemini (Canvas), dentro do navegador. Basta ter internet e a conta institucional.</p>
+<p><strong>7. O link não abre. O que faço?</strong>
+Recarregue a página uma vez. Se continuar, instale o JAPRO no seu próprio Gemini (item 2.4). Leva cerca de um minuto e só é feito uma vez.</p>
+<p><strong>8. Preciso instalar de novo a cada versão?</strong>
+Não. As atualizações chegam sozinhas.</p>
+<p><strong>9. Funciona no celular?</strong>
+Sim, no celular e no tablet. Para processos grandes, prefira o computador.</p>
+<p><strong>10. Por que o sistema pede o meu e-mail institucional?</strong>
+Para registrar a chave de emissor do seu navegador em seu nome. Assim, os documentos gerados podem ser ligados a quem os gerou.</p>
+<p><strong>11. Quanto tempo vale o código enviado por e-mail?</strong>
+15 minutos.</p>
+<p><strong>12. O código não chegou. E agora?</strong>
+Aguarde alguns minutos, olhe a caixa de spam, confira o e-mail digitado e clique em «Reenviar código».</p>
+<p><strong>13. Posso usar e-mail pessoal?</strong>
+Não. O registro só aceita e-mails institucionais (@pm.mt.gov.br).</p>
+<p><strong>14. Por que o sistema pediu o registro de novo?</strong>
+Porque você está em outro navegador ou computador, numa janela anônima, apagou os dados do navegador ou encerrou a sessão. Basta registrar de novo.</p>
+<p><strong>15. Onde vejo a minha chave de emissor?</strong>
+Na aba «Outras ferramentas de apoio», no quadro «Chave de emissor deste navegador». Use o botão «Copiar» para informá-la ao seu setor ou à sua chefia.</p>
+<p><strong>16. Quais formatos de arquivo o JAPRO aceita?</strong>
+PDF (inclusive digitalizado e com mais de mil páginas), DOCX, TXT, JPG e PNG.</p>
+<p><strong>17. Posso carregar mais de um arquivo?</strong>
+Sim. O sistema mantém a numeração de páginas de cada um.</p>
+<p><strong>18. Há limite de tamanho?</strong>
+Não. A leitura é feita no navegador, página por página.</p>
+<p><strong>19. Meu arquivo é .doc (Word antigo). Funciona?</strong>
+Não diretamente. Salve como .docx ou PDF e carregue de novo.</p>
+<p><strong>20. O PDF tem senha. Funciona?</strong>
+Não. Remova a senha e carregue de novo.</p>
+<p><strong>21. O encarregado ainda não foi definido. Posso iniciar?</strong>
+Sim. Marque «Encarregado ainda não definido». O despacho dirá que ele será designado em ato próprio.</p>
+<p><strong>22. E se o destinatário não estiver definido?</strong>
+Marque «Destinatário a definir». O despacho ficará sem o item de encaminhamento.</p>
+<p><strong>23. Por que o encarregado que informei não entrou no despacho?</strong>
+Porque ele é incompatível com o investigado (por exemplo, posto inferior ao de investigado oficial). Veja o aviso «Encarregado incompatível» e escolha uma das opções.</p>
+<p><strong>24. Quanto tempo leva uma análise?</strong>
+Depende do tamanho do processo e das páginas digitalizadas. O campo «Tempo restante» mostra a estimativa atualizada.</p>
+<p><strong>25. Posso parar e continuar depois?</strong>
+Sim. Clique em «Interromper» e, depois, em «Retomar da etapa interrompida». Se fechar a página, carregue os mesmos autos no mesmo navegador e escolha «Retomar».</p>
+<p><strong>26. O que significa «Resolva antes de assinar»?</strong>
+São pendências que mudam o conteúdo do documento. Resolva cada uma ou confirme a decisão antes de assinar.</p>
+<p><strong>27. O que significa «Confira»?</strong>
+São pontos que o sistema não conseguiu confirmar sozinho. Verifique cada um nas páginas indicadas.</p>
+<p><strong>28. O que significa «Ajustes automáticos já feitos»?</strong>
+São correções que o sistema já fez no texto. Servem só para informação.</p>
+<p><strong>29. O que é «Decisão sensível»?</strong>
+É quando as duas determinações independentes da decisão divergiram. O item mostra as duas, e você escolhe qual prevalece.</p>
+<p><strong>30. Como aplico uma correção sugerida?</strong>
+Abra o item no painel e clique em «Aplicar correção sugerida» (ou escolha uma das opções, ou preencha o campo pedido). Depois, baixe o documento de novo.</p>
+<p><strong>31. Por que algumas pendências não têm botão de correção?</strong>
+Porque a troca criaria outra pendência ou porque só você pode julgar. Use o texto sugerido como modelo e corrija no Word.</p>
+<p><strong>32. Posso desfazer uma correção?</strong>
+Sim, com «Desfazer». Se houver correções mais recentes no mesmo trecho, desfaça-as primeiro.</p>
+<p><strong>33. Qual formato devo baixar, PDF ou Word?</strong>
+O PDF serve para leitura e impressão. O Word é editável, para ajustar o texto antes da assinatura.</p>
+<p><strong>34. Por que aparece uma tela de responsabilidade antes de cada download?</strong>
+Para lembrar que o documento é minuta gerada por ferramenta de apoio e que a conferência integral é sua. Clique em «Li e vou conferir integralmente» para seguir.</p>
+<p><strong>35. Por que o despacho não menciona o JAPRO?</strong>
+Porque o despacho é ato pessoal da autoridade e vale pela assinatura de quem o firma. Se encontrar qualquer menção à ferramenta, retire-a.</p>
+<p><strong>36. Posso alterar o despacho gerado?</strong>
+Sim, e deve, sempre que o caso exigir. Use o arquivo Word. A verificação de integridade mostrará, se consultada, o que mudou em relação ao texto gerado.</p>
+<p><strong>37. O que é o prazo «proposto pelo sistema»?</strong>
+É o prazo previsto em lei para o caso (por exemplo, 40 dias para IPM com investigado solto, CPPM, art. 20), que o sistema preenche quando o campo está vazio. Você pode alterar.</p>
+<p><strong>38. Quando uso o apensamento?</strong>
+Quando já existe procedimento instaurado sobre o mesmo fato. Clique em «Caso de apensamento» e anexe a portaria.</p>
+<p><strong>39. O JAPRO descobre sozinho se já há procedimento instaurado?</strong>
+Não. Ele não consulta outros sistemas. Você precisa anexar a portaria.</p>
+<p><strong>40. O que é forçar o apensamento?</strong>
+É apensar contra a conclusão técnica do cruzamento. Só cabe com motivo jurídico (ordem judicial, requisição do Ministério Público, decisão superior, identidade de fato não demonstrada nos documentos ou risco de dupla apuração), com justificativa escrita.</p>
+<p><strong>41. O que significa «alerta máximo» de integridade?</strong>
+Que o arquivo recebido tem trechos que parecem preparados para influenciar a leitura automática. O sistema os neutraliza antes da análise, e o resultado não é influenciado. Leia o alerta, confira no original e clique em «Li e entendi».</p>
+<p><strong>42. O alerta máximo significa que alguém fraudou o documento?</strong>
+Não necessariamente. Elementos estranhos podem surgir em qualquer etapa de produção, conversão ou tramitação do arquivo. A avaliação sobre eventual providência é sua.</p>
+<p><strong>43. O despacho cita o alerta de integridade?</strong>
+Não. O alerta consta só do Relatório Sintético, na seção «Integridade do documento de entrada».</p>
+<p><strong>44. Para que serve o Comunicado de alerta?</strong>
+Para comunicar oficialmente os achados de integridade, com localização e imagens, para apuração, para sugerir abertura de procedimento ou para pedir ao remetente a verificação e o reenvio do original.</p>
+<p><strong>45. Posso gerar mais de um comunicado?</strong>
+Sim. Cada finalidade marcada gera um comunicado separado.</p>
+<p><strong>46. Como sei se um relatório ou despacho foi alterado?</strong>
+Use «Verificar integridade», na aba «Outras ferramentas de apoio», arrastando o documento (e, de preferência, o relatório da mesma análise).</p>
+<p><strong>47. Posso conferir só a denúncia ou o processo?</strong>
+Só junto com o relatório da mesma análise, que guarda a impressão digital dos autos.</p>
+<p><strong>48. A verificação envia meus arquivos para a internet?</strong>
+Não. Tudo é calculado no seu computador.</p>
+<p><strong>49. Colei o despacho no SIGADOC. A verificação ainda funciona?</strong>
+A assinatura invisível sai quando o texto é colado em outro editor. Arraste junto o relatório da mesma análise: a ferramenta confere o texto e reconhece carimbos e rodapés do sistema de protocolo.</p>
+<p><strong>50. O JAPRO guarda cópia dos processos?</strong>
+Não. Por isso, arquive o Relatório Sintético com os autos, como comprovante da análise.</p>
+<p><strong>51. Para onde vão os dados dos autos?</strong>
+Somente ao serviço de inteligência artificial em uso (no Gemini, o próprio Gemini), para a análise. O registro de uso tem só metadados, sem texto dos autos, nomes ou números de processo.</p>
+<p><strong>52. Usei um computador compartilhado. O que faço ao terminar?</strong>
+Clique em «Encerrar sessão e apagar dados deste navegador», no rodapé, e confirme em «Apagar e encerrar». Baixe antes o que quiser guardar.</p>
+<p><strong>53. O que acontece com os documentos já emitidos quando encerro a sessão?</strong>
+Continuam válidos e conferindo como assinados pela chave antiga. Os arquivos já baixados não são afetados.</p>
+<p><strong>54. O que é a aba «Base normativa»?</strong>
+É a única fonte de fundamentos que o sistema pode citar. Dispositivo fora dela é bloqueado e marcado para conferência.</p>
+<p><strong>55. Onde consulto o texto integral de uma norma?</strong>
+No Compêndio Normativo ou no Gemini Notebook da Corregedoria, na aba «Outras ferramentas de apoio».</p>
+<p><strong>56. Como registro um erro do sistema?</strong>
+Assista ao vídeo 5, «Como registrar um erro», e entre em contato com o Plantão da Corregedoria.</p>
+<p><strong>57. Como falo com o Plantão?</strong>
+Pelo WhatsApp (65) 98170-0385, ou pelo botão «Falar com o Plantão», na aba «Outras ferramentas de apoio».</p>
+<hr />
+<h2>13. Glossário</h2>
+<p><strong>Alerta máximo (de integridade):</strong> aviso de que o arquivo recebido tem trechos que parecem preparados para influenciar a leitura automática. O sistema os neutraliza; a conferência e a decisão sobre providências são do analista.</p>
+<p><strong>Apensamento:</strong> juntada de um expediente a um procedimento já existente que trata do mesmo fato, para evitar dupla apuração.</p>
+<p><strong>Arquivamento:</strong> encerramento do expediente sem instauração de procedimento, por falta de justa causa.</p>
+<p><strong>Assinatura invisível:</strong> proteção gravada nas propriedades internas do despacho (Word ou PDF), que não aparece no texto nem na impressão e permite verificar se o texto foi alterado.</p>
+<p><strong>Atenção (nível de integridade):</strong> sinal no arquivo que pode ter origem legítima, mostrado para conferência.</p>
+<p><strong>Autoridade de polícia judiciária militar:</strong> autoridade militar com atribuição para instaurar e determinar a apuração de crimes militares e infrações disciplinares, nos termos do Código de Processo Penal Militar.</p>
+<p><strong>Autos:</strong> o conjunto de documentos do processo ou do expediente.</p>
+<p><strong>Base normativa embarcada:</strong> conjunto de normas que o JAPRO pode citar. Nada fora dela é aceito como fundamento.</p>
+<p><strong>Cadeia de custódia digital:</strong> registro que permite provar que os documentos gerados vieram exatamente daqueles arquivos e não foram alterados.</p>
+<p><strong>Canvas:</strong> ferramenta do Gemini que exibe aplicativos e documentos interativos. É nela que o JAPRO roda.</p>
+<p><strong>Chave de emissor:</strong> identificação criada em cada navegador, no formato XXXX-XXXX-XXXX, que assina os documentos gerados e é registrada em nome do usuário.</p>
+<p><strong>Código de verificação:</strong> código no rodapé do relatório, calculado sobre o texto, que revela qualquer alteração posterior.</p>
+<p><strong>Comunicado de alerta:</strong> documento oficial gerado pelo JAPRO para comunicar achados de integridade do arquivo recebido.</p>
+<p><strong>Conselho de Disciplina:</strong> processo administrativo disciplinar demissório para aspirante, praça estável e praça da reserva ou reformada.</p>
+<p><strong>Conselho de Justificação:</strong> processo administrativo disciplinar demissório para oficial.</p>
+<p><strong>CPPM (Código de Processo Penal Militar):</strong> lei que rege o processo penal militar, inclusive o inquérito policial militar.</p>
+<p><strong>Declínio de competência:</strong> remessa do expediente à autoridade ou ao órgão competente, quando a matéria não cabe a quem o recebeu.</p>
+<p><strong>Decisão sensível:</strong> situação em que as duas determinações independentes da decisão divergem; o analista escolhe qual prevalece.</p>
+<p><strong>Despacho fundamentado:</strong> ato da autoridade que decide o encaminhamento do expediente, com relatório, análise, fundamentação e decisão.</p>
+<p><strong>Diligências complementares:</strong> providências para obter esclarecimentos antes de decidir sobre a instauração.</p>
+<p><strong>Dispositivo (do despacho):</strong> a parte final do despacho com as ordens: o que fazer, quem faz, em que prazo e a quem encaminhar.</p>
+<p><strong>Encarregado:</strong> militar designado para conduzir o procedimento (por exemplo, o IPM). Na sindicância, chama-se sindicante.</p>
+<p><strong>Expediente:</strong> o documento ou conjunto de documentos que chegou para análise (denúncia, ofício, reclamação etc.).</p>
+<p><strong>Gemini:</strong> assistente de inteligência artificial do Google, no qual o JAPRO é executado.</p>
+<p><strong>Gemini Notebook (NotebookLM):</strong> caderno do Google carregado com documentos, que responde a perguntas citando as fontes. A Corregedoria mantém um com a base normativa da PMMT.</p>
+<p><strong>Impressão digital (SHA-256):</strong> código calculado a partir do conteúdo de um arquivo; muda por completo se uma única vírgula mudar. Funciona como o DNA do arquivo.</p>
+<p><strong>Instauração:</strong> abertura de procedimento formal para apurar os fatos.</p>
+<p><strong>IPM (Inquérito Policial Militar):</strong> procedimento investigatório para apurar crime militar.</p>
+<p><strong>ISO (Inquérito Sanitário de Origem):</strong> procedimento investigatório de perícia médico-administrativa.</p>
+<p><strong>Justa causa:</strong> existência de elementos mínimos (indícios de materialidade e de autoria) que justificam a apuração.</p>
+<p><strong>LGPD (Lei Geral de Proteção de Dados Pessoais):</strong> Lei nº 13.709/2018, que protege os dados pessoais.</p>
+<p><strong>Materialidade:</strong> prova de que o fato existiu (por exemplo, um laudo que registra lesão).</p>
+<p><strong>Matriz de Admissibilidade:</strong> roteiro padronizado de análise adotado pela Corregedoria-Geral, aplicado pelo JAPRO aos fatos dos autos.</p>
+<p><strong>Matriz de confrontamento de versões:</strong> tabela que compara as versões dos envolvidos (policiais, vítima, testemunhas).</p>
+<p><strong>Minuta:</strong> versão preliminar de um documento, que só vale depois de revisada e assinada.</p>
+<p><strong>Notícia de fato:</strong> comunicação de um fato que pode exigir apuração.</p>
+<p><strong>PAD (Processo Administrativo Disciplinar):</strong> processo para apurar infração disciplinar. Pode ser não demissório (Termo Acusatório, Sindicância Acusatória) ou demissório (Sindicância Demissória, Conselho de Disciplina, Conselho de Justificação).</p>
+<p><strong>Pertinência (triagem de):</strong> verificação inicial de que o arquivo é mesmo denúncia ou notícia de fato correcional.</p>
+<p><strong>Plantão da Corregedoria:</strong> atendimento por WhatsApp, (65) 98170-0385, para dúvidas sobre o JAPRO e sobre procedimentos correcionais.</p>
+<p><strong>Portaria:</strong> ato que instaura formalmente um procedimento (por exemplo, a portaria de instauração de um IPM).</p>
+<p><strong>Relatório Sintético de Admissibilidade:</strong> documento de apoio ao analista, com a análise completa, os alertas e a cadeia de custódia.</p>
+<p><strong>RGPMMT:</strong> número do registro geral do militar na PMMT.</p>
+<p><strong>SIGADOC:</strong> sistema de gestão de documentos usado na tramitação dos expedientes.</p>
+<p><strong>Sindicância:</strong> procedimento de apuração. Pode ser investigativa, acusatória ou demissória.</p>
+<p><strong>Termo Acusatório:</strong> processo administrativo disciplinar não demissório.</p>
+<hr />
+<h2>14. Onde obter ajuda</h2>
+<h3>14.1. Vídeos de treinamento</h3>
+<p>Os vídeos estão na aba <strong>«Como usar»</strong> e também nos endereços abaixo (Google Drive; se pedir permissão, entre com a conta institucional). Se é a sua primeira vez, assista na ordem.</p>
+<ol>
+<li><strong>Como ter acesso ao sistema</strong> – onde encontrar o JAPRO, como abri-lo, o que aparece na primeira abertura e o que conferir antes de começar.
+   https://drive.google.com/file/d/1MCcW5l_R9MM-B6x-in6x2-RXhRylB2tj/view</li>
+<li><strong>Como usar o sistema</strong> – como anexar o processo, preencher o encarregado, o destinatário e os campos do despacho, iniciar a análise e acompanhar cada etapa.
+   https://drive.google.com/file/d/1H0cAk0sc6patzwAkwk9sMZr-E0zfmw0U/view</li>
+<li><strong>Analisando o resultado gerado</strong> – a decisão sugerida, o relatório e o despacho; os avisos «Resolva antes de assinar», «Confira» e «Ajustes automáticos»; como aplicar uma correção sugerida e baixar em PDF ou Word.
+   https://drive.google.com/file/d/1_Md_V7qr1AHfX723w24SR7a9hzhSqegW/view</li>
+<li><strong>Apensamento</strong> – como anexar a portaria ou o procedimento existente, interpretar o cruzamento e forçar o apensamento com justificativa e documento.
+   https://drive.google.com/file/d/1IBsAwSqGz4RQaL9x8eOZ5fcDXxmd7fge/view</li>
+<li><strong>Como registrar um erro</strong> – como identificar o erro e a etapa em que ocorreu, quais informações reunir e a quem encaminhar.
+   https://drive.google.com/file/d/1q-7_Awj2AnG1SBny8zPM5JjZlMkEzznE/view</li>
+<li><strong>Mecanismos de segurança do sistema</strong> – o registro da chave pelo e-mail institucional e a proteção contra arquivos manipulados.
+   https://drive.google.com/file/d/1mLHZ8Iwqg7MWSwtjf_Rxx0fNrgxq0jy-/view</li>
+<li><strong>Cadeia de custódia dos arquivos gerados</strong> – como os arquivos gerados são identificados e como conferir se um documento é autêntico e não foi alterado.
+   https://drive.google.com/file/d/1o4iKnvNsq89xqIb7SF6XD1rEqxvphJgO/view</li>
+</ol>
+<h3>14.2. Plantão da Corregedoria</h3>
+<ul>
+<li><strong>WhatsApp: (65) 98170-0385</strong>, sem exigência de conta.</li>
+<li>Também pelo botão «Falar com o Plantão», na aba «Outras ferramentas de apoio».</li>
+<li>Serve para tirar dúvidas sobre o uso do JAPRO e sobre procedimentos correcionais, por exemplo quando o resultado da análise, um alerta do relatório ou um passo do fluxo gerar dúvida antes da assinatura.</li>
+</ul>
+<p>Ao pedir ajuda, informe: o que você estava fazendo, a mensagem exibida na tela (um print ajuda), a etapa do processamento e a versão do sistema (no rodapé da tela). Não envie conteúdo sigiloso dos autos.</p>
+<h3>14.3. Outros recursos</h3>
+<ul>
+<li><strong>Gemini Notebook da Corregedoria</strong>: consulta à base normativa da PMMT (e-mail @pm.mt.gov.br; peça acesso como «Leitor»).</li>
+<li><strong>Compêndio Normativo</strong>: pasta do Google Drive com o texto integral das normas (e-mail @pm.mt.gov.br).</li>
+<li><strong>Página oficial</strong>: https://japro-cicp.github.io, com o acesso e o passo a passo de instalação.</li>
+</ul>
+<hr />
+<p><em>JAPRO · ferramenta de apoio à decisão da Autoridade de Polícia Judiciária Militar. A decisão e a assinatura são sempre do analista e da autoridade competente.</em></p>
+</body></html>
