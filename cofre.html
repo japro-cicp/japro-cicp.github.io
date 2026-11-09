@@ -1,14 +1,154 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>JAPRO</title></head><body><script>
-/* Cofre do JAPRO: guarda neste endereço fixo a chave do emissor e a situação do registro,
-   porque o Gemini abre o sistema a cada recarga num endereço novo (e o navegador apagaria tudo). */
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JAPRO · cofre da chave do emissor</title>
+<style>
+html,body{margin:0;background:#fff;color:#141b33;font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+#cx{display:none;box-sizing:border-box;min-height:100vh;padding:14px 18px;border-top:5px solid #1d3a8a}
+#cx.on{display:block}#cx.perigo{border-top-color:#b3261e}
+h1{font-size:17px;margin:0 0 8px}p{margin:0 0 8px}code{font:600 14px ui-monospace,Consolas,monospace;background:#eef1f8;padding:1px 5px;border-radius:4px;white-space:nowrap}
+.cod{font:700 30px/1.1 ui-monospace,Consolas,monospace;letter-spacing:.35em;background:#eef1f8;border-radius:8px;padding:8px 6px 8px 14px;display:inline-block;margin:2px 0 8px;user-select:none}
+label{display:block;font-weight:600;margin:4px 0}input{font:700 22px ui-monospace,Consolas,monospace;letter-spacing:.3em;width:7.5em;padding:6px 8px;border:2px solid #9aa6c8;border-radius:7px}
+input:focus{outline:3px solid #6b8cff;outline-offset:1px}
+.codf{font-size:15px;margin:2px 0 8px}.codf b{text-transform:uppercase}.codf .cod{margin:4px 0 0 4px;vertical-align:middle}
+.av{font-size:13px;color:#5b6582}.al{position:fixed;left:8px;right:8px;bottom:8px;margin:0;font-size:13px;color:#8a1c14;background:#fdecea;border-radius:6px;padding:6px 8px;display:none}
+.bt{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+button{font:600 15px system-ui,sans-serif;padding:9px 16px;border-radius:7px;border:1px solid #1d3a8a;background:#fff;color:#1d3a8a;cursor:pointer;min-width:120px}
+button.pri{background:#1d3a8a;color:#fff}#cx.perigo button.pri{background:#b3261e;border-color:#b3261e}
+button:disabled{opacity:.55;cursor:not-allowed}button:focus-visible{outline:3px solid #6b8cff;outline-offset:2px}
+</style></head><body><div id="cx" role="dialog" aria-modal="true" aria-labelledby="cxT"></div><script>
+/* Cofre do JAPRO (japro-cicp.github.io/cofre.html), versão 2 (Rodada S0, revista na auditoria).
+   Guarda, num endereço fixo, a chave do emissor e a situação do registro, porque o Gemini abre o sistema a cada recarga num
+   endereço novo. Regras de segurança:
+   - só responde a origens aceitas: os quadros do Canvas do Gemini (*.usercontent.goog). NÃO aceita *.googleusercontent.com (lá
+     qualquer pessoa publica páginas do Apps Script). Depois de conferir no Gemini real o padrão exato do endereço do Canvas,
+     estreitar ORIGENS (ver REPUBLICACAO_GEMINI.md);
+   - só conversa com o JAPRO novo (endereço com «?v=2»): o JAPRO antigo não recebe resposta e usa a guarda local do próprio navegador;
+   - a chave PRIVADA nunca sai daqui: é criada aqui, não é extraível e só assina dentro deste quadro;
+   - assinar exige autorização dada AQUI DENTRO, digitando um código de 4 algarismos sorteado e mostrado só nesta janela: com o quadro
+     escondido ou encoberto, ninguém consegue ler o código. Vale para esta abertura do sistema: até 20 assinaturas ou 1 hora;
+   - só assina mensagens no formato do JAPRO que contenham a impressão da própria chave;
+   - gravar, trocar ou apagar a chave por mensagem é proibido: apagar só pela tela do cofre, também com código;
+   - do registro, guarda só a situação (registrada, bloqueada), nunca nome, posto ou e-mail (o que o cofre antigo gravou é limpo);
+   - última versão válida do sistema (piso contra rebaixamento): só aceita versão com assinatura da Corregedoria-Geral que confere e
+     maior ou igual à guardada; não pode ser apagada por mensagem. */
 "use strict";
-const DB="japro-cofre";let dbP=null;
+const VERSAO=2,DB="japro-cofre";
+if(!/[?&]v=2(?:&|$)/.test(location.search)){/* JAPRO antigo: silêncio (ele usa a guarda local); nada de resposta enganosa */}else{
+const ORIGENS=[/^https:\/\/[a-z0-9-]+(?:\.[a-z0-9-]+)*\.usercontent\.goog$/];
+/*ORIGENS_TESTE*/
+const CHAVES_LIVRES=/^(?:ls:japro\.registro|ls:japro\.registro\.form|ldr:ultima)$/;
+/* (reauditoria R1) EXIGE_IOV2: onde o navegador informa a visibilidade real (IntersectionObserver v2), o código só é aceito com o quadro
+   visível sem nada por cima por VISIVEL_MS contínuos (o campo só se arma assim) e de novo no envio. PLANO B (se, no Gemini real, o cofre
+   legítimo aparecer como encoberto por engano): publicar este arquivo com EXIGE_IOV2=false (volta a valer só o código, como no Safari).
+   RECUSAS_MAX/BLOQ_MS: depois de 2 janelas recusadas neste quadro, «autorizar» fica bloqueado por 10 minutos. */
+const EXIGE_IOV2=true,VISIVEL_MS=500,RECUSAS_MAX=2,BLOQ_MS=10*60e3;
+const AUT_MAX=20,AUT_MS=3600e3,FORM_MS=2*3600e3,TENTATIVAS=3,B32="0123456789ABCDEFGHJKMNPQRSTVWXYZ";
+/* chave PÚBLICA de publicação do JAPRO (tools/japro-release-pub.pem): confere a assinatura da última versão válida */
+const PUB_JAPRO={"kty":"EC","crv":"P-256","x":"yejq88x4N2Dc4kIsILxpVMotTLLMyeNpa33_qL9GDQk","y":"uB9kehVIgSD3CupYSEckanpVv0q_jQaTE3Kk6iY0RVQ"};
+let dbP=null;const AUT={ate:0,n:0};const REC={n:0,ate:0};
+function aceita(o){return typeof o==="string"&&ORIGENS.some(r=>r.test(o))}
 function abre(){if(dbP)return dbP;dbP=new Promise((res,rej)=>{const q=indexedDB.open(DB,1);q.onupgradeneeded=()=>{try{q.result.createObjectStore("k")}catch(e){}};q.onsuccess=()=>res(q.result);q.onerror=()=>{dbP=null;rej(q.error)}});return dbP}
-async function op(m){const db=await abre();return new Promise((res,rej)=>{const tx=db.transaction("k",m.op==="get"?"readonly":"readwrite"),st=tx.objectStore("k");let v;
-  const r=m.op==="get"?st.get(m.k):m.op==="add"?st.add(m.v,m.k):m.op==="put"?st.put(m.v,m.k):m.op==="del"?st.delete(m.k):m.op==="clear"?st.clear():null;
-  if(!r){rej(new Error("operação desconhecida"));return}r.onsuccess=()=>{v=r.result};tx.oncomplete=()=>res(m.op==="get"?v:true);tx.onerror=tx.onabort=e=>{try{e.preventDefault()}catch(x){}rej(tx.error||new Error("recusado"))}})}
-addEventListener("message",async e=>{const m=e.data;if(!m||m.japroCofre!==1||!e.source)return;
-  let out;try{out={japroCofre:1,id:m.id,ok:true,v:await op(m)}}catch(x){out={japroCofre:1,id:m.id,ok:false,erro:String(x&&x.message||x).slice(0,160)}}
-  try{e.source.postMessage(out,e.origin==="null"?"*":e.origin)}catch(x){}});
-try{parent.postMessage({japroCofre:1,pronto:true},"*")}catch(e){}
+async function idb(modo,k,v){const db=await abre();return new Promise((res,rej)=>{const tx=db.transaction("k",modo==="get"?"readonly":"readwrite"),st=tx.objectStore("k");let out;
+  const r=modo==="get"?st.get(k):modo==="put"?st.put(v,k):modo==="add"?st.add(v,k):st.delete(k);
+  r.onsuccess=()=>{out=r.result};tx.oncomplete=()=>res(modo==="get"?out:true);tx.onerror=tx.onabort=e=>{try{e.preventDefault()}catch(x){}rej(tx.error||new Error("recusado"))}})}
+function b64(u8){let s="";for(let i=0;i<u8.length;i++)s+=String.fromCharCode(u8[i]);return btoa(s)}
+function unb64(b){const s=atob(String(b));const u=new Uint8Array(s.length);for(let i=0;i<s.length;i++)u[i]=s.charCodeAt(i);return u}
+async function fpDe(raw){const h=new Uint8Array(await crypto.subtle.digest("SHA-256",unb64(raw)));let bits="";for(let i=0;i<8;i++)bits+=h[i].toString(2).padStart(8,"0");
+  let o="";for(let i=0;i<60;i+=5)o+=B32[parseInt(bits.slice(i,i+5),2)];return o.match(/.{4}/g).join("-")}
+/* registro: só a situação; o que o cofre antigo gravou (com nome, posto e e-mail) é limpo na primeira abertura */
+function limpaRegistro(v){try{const o=JSON.parse(String(v));if(!o||typeof o!=="object")return null;return JSON.stringify({fp:String(o.fp||"").slice(0,20),registrada:!!o.registrada,bloqueada:!!o.bloqueada,em:o.em||new Date().toISOString()})}catch(e){return null}}
+let migrou=null;
+function migra(){if(migrou)return migrou;migrou=(async()=>{try{const r=await idb("get","ls:japro.registro");if(typeof r==="string"){const c=limpaRegistro(r);if(c!==r){if(c)await idb("put","ls:japro.registro",c);else await idb("del","ls:japro.registro")}}
+    const f=await idb("get","ls:japro.registro.form");if(f!==undefined&&!(f&&typeof f==="object"&&typeof f.em==="number"))await idb("del","ls:japro.registro.form")}catch(e){}})();return migrou}
+async function chaveRec(){const r=await idb("get","emissor");return r&&r.priv&&r.raw?r:null}
+async function info(){const r=await chaveRec();return r?{raw:r.raw,fp:await fpDe(r.raw),criada:r.criada||null,cofre:VERSAO}:null}
+let gerando=null;
+async function gera(){if(gerando)return gerando;gerando=(async()=>{let r=await chaveRec();
+  if(!r){const kp=await crypto.subtle.generateKey({name:"ECDSA",namedCurve:"P-256"},false,["sign","verify"]);
+    const raw=b64(new Uint8Array(await crypto.subtle.exportKey("raw",kp.publicKey)));
+    try{await idb("add","emissor",{formato:"JAPRO-ASSINATURA-1",priv:kp.privateKey,raw,criada:new Date().toISOString()})}catch(e){} // outra aba criou antes: vale a gravada
+    r=await chaveRec();if(!r)throw new Error("o navegador não guardou a chave do emissor")}
+  return info()})();try{return await gerando}finally{gerando=null}}
+/* só mensagens do JAPRO, com a impressão desta chave: relatório, despacho e evento do registro de integridade */
+function formatoOk(tipo,msg,fp){if(typeof msg!=="string"||msg.length>3e6)return false;
+  if(tipo==="rel"){const L=msg.split("\n");return /^JAPRO-ASSINATURA-[12]$/.test(L[0])&&L[1]==="RELATORIO"&&L[3]===fp}
+  if(tipo==="dsp"){const L=msg.split("\n");return L[0]==="VERIFICACAO-DESPACHO-1"&&(";"+L[1]+";").includes(";e="+fp+";")}
+  if(tipo==="tel"){try{const a=JSON.parse(msg);return Array.isArray(a)&&a[0]===fp&&a.length<=8}catch(e){return false}}
+  return false}
+async function assina(m){const r=await chaveRec();if(!r)throw new Error("não há chave do emissor neste navegador");
+  if(!(Date.now()<AUT.ate&&AUT.n<AUT_MAX))return {precisa:"autorizar"};
+  const fp=await fpDe(r.raw);if(!formatoOk(m.tipo,m.msg,fp))throw new Error("mensagem fora do formato do JAPRO");
+  AUT.n++;const s=new Uint8Array(await crypto.subtle.sign({name:"ECDSA",hash:"SHA-256"},r.priv,new TextEncoder().encode(m.msg)));return {sig:b64(s)}}
+/* última versão válida (piso contra rebaixamento): assinatura da Corregedoria-Geral conferida aqui; só sobe */
+const VER_RE=/^\d{4}\.\d{2}\.\d{2}-\d{4}$/;let pubP=null;
+async function ultimaOk(t){let o;try{o=JSON.parse(String(t))}catch(e){return null}
+  if(!o||!/^[0-9a-f]{40}$/.test(o.ref||"")||!/^[0-9a-f]{64}$/.test(o.sha256||"")||!VER_RE.test(o.versao||"")||!/^\d{4}-\d{2}-\d{2}T[\d:.]+Z$/.test(o.data||""))return null;
+  try{if(!pubP)pubP=crypto.subtle.importKey("jwk",PUB_JAPRO,{name:"ECDSA",namedCurve:"P-256"},false,["verify"]);
+    const ok=await crypto.subtle.verify({name:"ECDSA",hash:"SHA-256"},await pubP,unb64(o.assinatura2),new TextEncoder().encode("JAPRO-CORE-2\nsha256="+o.sha256+"\nversao="+o.versao+"\ndata="+o.data));return ok?o:null}catch(e){return null}}
+async function lsGet(k){await migra();const v=await idb("get",k);
+  if(k==="ls:japro.registro")return typeof v==="string"?(limpaRegistro(v)||undefined):undefined;
+  if(k==="ls:japro.registro.form"){if(!v||typeof v!=="object")return undefined;if(!(Date.now()-v.em<FORM_MS)){await idb("del",k);return undefined}return v.v}
+  return v}
+async function lsPut(k,v){if(typeof v!=="string"||v.length>20000)throw new Error("valor recusado");
+  if(k==="ls:japro.registro"){const c=limpaRegistro(v);if(!c)throw new Error("valor recusado");return idb("put",k,c)}
+  if(k==="ls:japro.registro.form")return idb("put",k,{v,em:Date.now()});
+  if(k==="ldr:ultima"){const n=await ultimaOk(v);if(!n)throw new Error("versão sem assinatura válida");const a=await ultimaOk(await idb("get",k));if(a&&a.versao>n.versao)throw new Error("versão menor que a já guardada");return idb("put",k,v)}
+  throw new Error("recusado")}
+async function limpaLivres(){for(const k of ["ls:japro.registro","ls:japro.registro.form"])await idb("del",k);return true} // ldr:ultima fica (piso)
+/* ---------- telas (só dentro deste quadro): código de 4 algarismos visível só aqui ---------- */
+const cx=document.getElementById("cx");
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+function sorteia(){const u=new Uint16Array(1);crypto.getRandomValues(u);return String(u[0]%10000).padStart(4,"0")}
+function mostra(o){return new Promise(res=>{cx.className="on"+(o.perigo?" perigo":"");const cod=sorteia();let tent=0;
+  /* o código fica DENTRO da frase da finalidade: recortar o código leva junto o «para quê» */
+  cx.innerHTML=`<h1 id="cxT">${esc(o.titulo)}</h1>${o.html}<p class="codf" id="cxCodF">Para <b>${esc(o.fim)}</b>, digite <span class="cod" aria-label="${cod.split("").join(" ")}">${cod}</span></p>
+    <label for="cxIn">${esc(o.pede)}</label><input id="cxIn" inputmode="numeric" autocomplete="off" maxlength="4" pattern="[0-9]*" aria-describedby="cxMsg">
+    <p class="al" id="cxEnc">Atenção: o navegador indica que esta janela pode estar encoberta por outro conteúdo. Só continue se você vê esta janela inteira.</p>
+    <p class="av" id="cxMsg" aria-live="polite">O botão «${esc(o.sim)}» fica ativo depois que os 4 algarismos forem digitados.</p>
+    <div class="bt"><button type="button" class="pri" id="cxSim" disabled>${esc(o.sim)}</button><button type="button" id="cxNao">${esc(o.nao)}</button></div>`;
+  const inp=document.getElementById("cxIn"),sim=document.getElementById("cxSim"),nao=document.getElementById("cxNao"),msg=document.getElementById("cxMsg");let fim=false;
+  const sai=v=>{if(fim)return;fim=true;cx.className="";cx.innerHTML="";removeEventListener("keydown",kd);try{io&&io.disconnect()}catch(e){}res(v)};
+  const kd=e=>{if(e.key==="Escape")sai(false)};addEventListener("keydown",kd);
+  /* visibilidade confirmada pelo navegador (IOv2): sem ela, o campo não se arma e o envio é recusado */
+  const temIO2=EXIGE_IOV2&&typeof IntersectionObserverEntry!=="undefined"&&"isVisible" in IntersectionObserverEntry.prototype;let visDesde=null,tmV=null;
+  const visivelOk=()=>!temIO2||(visDesde!==null&&performance.now()-visDesde>=VISIVEL_MS);
+  const arma=()=>{inp.disabled=!visivelOk();sim.disabled=inp.disabled||inp.value.length!==4;if(temIO2&&inp.disabled)msg.textContent="Aguarde: o campo é liberado quando esta janela estiver inteiramente visível, sem nada por cima.";
+    else if(inp.value.length!==4)msg.textContent=`O botão «${o.sim}» fica ativo depois que os 4 algarismos forem digitados.`};
+  if(temIO2){inp.disabled=true;arma()}
+  inp.oninput=()=>{inp.value=inp.value.replace(/\D/g,"").slice(0,4);arma()};
+  const confirma=()=>{if(sim.disabled)return;if(!visivelOk()){arma();return}if(inp.value===cod){sai(true);return}tent++;
+    if(tent>=TENTATIVAS){sai(false);return}msg.textContent=`Código diferente do mostrado acima. Confira e digite de novo (${TENTATIVAS-tent} ${TENTATIVAS-tent===1?"tentativa restante":"tentativas restantes"}).`;inp.value="";sim.disabled=true;inp.focus()};
+  sim.onclick=confirma;inp.onkeydown=e=>{if(e.key==="Enter")confirma()};nao.onclick=()=>sai(false);
+  // camada extra, onde o navegador oferece: aviso quando a janela está encoberta (a proteção é o código, que só se lê aqui)
+  let io=null;try{io=new IntersectionObserver(E=>{const e=E[E.length-1];if(!e||fim)return;const enc=document.getElementById("cxEnc");
+      if(e.isVisible===true){if(visDesde===null){visDesde=performance.now();clearTimeout(tmV);tmV=setTimeout(()=>{if(!fim)arma()},VISIVEL_MS+20)}if(enc)enc.style.display="none"}
+      else if(e.isVisible===false){visDesde=null;clearTimeout(tmV);if(enc)enc.style.display="block";arma()}},{trackVisibility:true,delay:100});io.observe(cx)}catch(e){io=null}
+  setTimeout(()=>{try{inp.focus()}catch(e){}},50)})}
+let pedido=null;
+async function autoriza(){if(Date.now()<AUT.ate&&AUT.n<AUT_MAX)return true;if(pedido)return pedido;if(Date.now()<REC.ate)return false; /* pedidos recusados demais neste quadro */
+  pedido=(async()=>{const k=await info();if(!k)return false;
+    const ok=await mostra({titulo:"Autorizar a assinatura dos documentos",sim:"Autorizar",nao:"Recusar",fim:"autorizar a assinatura dos documentos do JAPRO",pede:"Código:",
+      html:`<p>O JAPRO pede para assinar, com a <b>chave do emissor deste navegador</b> (<code>${esc(k.fp)}</code>), os documentos que você baixar nesta abertura do sistema (até 20 documentos, por até 1 hora).</p><p>Autorize só se você acabou de pedir um download no JAPRO. Se esta janela apareceu sem esse pedido, clique em <b>Recusar</b>.</p>`});
+    if(ok){AUT.ate=Date.now()+AUT_MS;AUT.n=0;REC.n=0}else if(++REC.n>=RECUSAS_MAX){REC.ate=Date.now()+BLOQ_MS;REC.n=0}return ok})();try{return await pedido}finally{pedido=null}}
+async function apagaChave(){const k=await info();if(!k){await limpaLivres();return true}
+  const ok=await mostra({perigo:true,titulo:"Apagar a chave do emissor deste navegador?",sim:"Apagar a chave",nao:"Manter a chave",fim:"apagar a chave do emissor deste navegador",pede:"Código:",
+    html:`<p>Será apagada a chave <code>${esc(k.fp)}</code>, que assina os documentos do JAPRO neste navegador, e a situação do registro dela. Os documentos já emitidos continuam conferindo como assinados por ela; os próximos sairão com uma chave nova, que precisará ser registrada.</p>`});
+  if(!ok)return false;await idb("del","emissor");await limpaLivres();AUT.ate=0;return true}
+/* ---------- mensagens ---------- */
+async function trata(m){const op=m.op;
+  if(op==="info")return info();
+  if(op==="gerar")return gera();
+  if(op==="assinar")return assina(m);
+  if(op==="autorizar")return autoriza();
+  if(op==="apagarChave")return apagaChave();
+  if(op==="clear")return limpaLivres(); // só a situação do registro; nem a chave nem o piso de versão
+  if(op==="get"){if(m.k==="emissor"){const i=await info();return i?Object.assign({formato:"JAPRO-ASSINATURA-1"},i):undefined} // sem a chave privada
+    if(!CHAVES_LIVRES.test(String(m.k)))throw new Error("recusado");return lsGet(m.k)}
+  if(op==="put"||op==="add"||op==="del"){if(!CHAVES_LIVRES.test(String(m.k)))throw new Error("recusado: a chave do emissor só pode ser apagada pela tela do cofre");
+    if(op==="del"){if(m.k==="ldr:ultima")throw new Error("recusado: a última versão válida não se apaga por mensagem");return idb("del",m.k)}return lsPut(m.k,m.v)}
+  throw new Error("operação desconhecida")}
+addEventListener("message",async e=>{const m=e.data;if(!m||m.japroCofre!==1||!e.source||m.pronto)return;
+  if(!aceita(e.origin)){try{e.source.postMessage({japroCofre:1,id:m.id,ok:false,erro:"origem não autorizada"},e.origin==="null"?"*":e.origin)}catch(x){}return}
+  let out;try{out={japroCofre:1,id:m.id,ok:true,v:await trata(m)}}catch(x){out={japroCofre:1,id:m.id,ok:false,erro:String(x&&x.message||x).slice(0,160)}}
+  try{e.source.postMessage(out,e.origin)}catch(x){}});
+try{parent.postMessage({japroCofre:1,pronto:true,v:VERSAO},"*")}catch(e){}
+}
 </script></body></html>
